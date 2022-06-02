@@ -6,7 +6,7 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: '[name][ext]',     // makes names when bundled in dist
-        clean: true,                            // removes excess bundles in dist
+        // assetModuleFilename: '[name][ext]',     // makes names when bundled in dist
+        // clean: true,                            // removes excess bundles in dist
     },
 };
