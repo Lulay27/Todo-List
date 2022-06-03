@@ -5,14 +5,21 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: 'main.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         // assetModuleFilename: '[name][ext]',     // makes names when bundled in dist
         // clean: true,                            // removes excess bundles in dist
     },
+    devServer: {
+      static: './dist',
+    },
+    optimization: {
+      runtimeChunk: 'single',
+    },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Output Management',
+        title: 'To-do List',
+        template: './src/template.html',
       }),
     ],
     module: {
