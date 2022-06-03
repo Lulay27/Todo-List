@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -9,6 +10,11 @@ module.exports = {
         // assetModuleFilename: '[name][ext]',     // makes names when bundled in dist
         // clean: true,                            // removes excess bundles in dist
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: 'Output Management',
+      }),
+    ],
     module: {
         rules: [
           {
