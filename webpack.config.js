@@ -7,7 +7,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        // assetModuleFilename: '[name][ext]',     // makes names when bundled in dist
+        assetModuleFilename: '[name][ext]',     // makes names when bundled in dist
         // clean: true,                            // removes excess bundles in dist
     },
     devServer: {
@@ -18,6 +18,7 @@ module.exports = {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        inject: true,
         title: 'To-do List',
         template: './src/template.html',
       }),
@@ -36,6 +37,14 @@ module.exports = {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
             type: 'asset/resource',
           },
+          {
+            test: /\.html$/,
+            use: [
+              {
+                loader: 'html-loader'
+              }
+            ]
+          }
         ],
       },
 };

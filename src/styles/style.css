@@ -1,3 +1,21 @@
+*{
+    
+}
+
+.header {
+    display: flex;
+}
+
+.menu-png {
+    width: 10px;
+    height: 10px;
+}
+
+.title-container {
+    
+}
+
+
 .navbar {
-    background-color:bisque;
+    background-color:rgb(131, 106, 75);
 }
