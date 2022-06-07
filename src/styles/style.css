@@ -1,5 +1,4 @@
 *{
-    /* background-color: grey; */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,22 +7,8 @@
 .header {
     display: flex;
     padding: 10px;
-    align-items: flex-start;
-    /* column-gap: 100px; */
     height: 300px;
-    width: auto;
-    
 }
-
-.header .menu-btn-container{
-    align-self: center;
-}
-.header .title-container {
-    /* align-self: flex-end; */
-    justify-self: center;
-}
-
-
 
 .menu-png {
     width: 30px;
@@ -35,7 +20,6 @@
     background-color: white;
     cursor: pointer;
     border: none;
-    /* padding: 4px; */
 }
 
 .menu-btn-container {
@@ -43,6 +27,9 @@
 }
 
 .title-container {
-    
+    text-align: center;
     font-size: 70px;
+    width: 50%;
+    margin: auto;
+    margin-top: 0;
 }
