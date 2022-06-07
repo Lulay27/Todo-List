@@ -4,34 +4,25 @@ import './styles/style.css';
 
 const menuBtn = document.querySelector('.menu-btn');
 const nonMenu = document.querySelector('.main');
-const notSide = document.querySelectorAll('body :not(.side-bar');
+// const notSide = document.querySelectorAll('body :not(.side-bar');
+const sideBar = document.querySelector('.side-bar');
 
 menuBtn.addEventListener('click',render);
 nonMenu.addEventListener('click',renderOff);
 
+let num = 0;
+
 function render(e) {
-
-    // console.log (e.target.className);
-    console.log(e.target);
-
-    // if (e.target.className = 'menu-png' ) {
+    if (e.target.className = 'menu-png'){
         document.querySelector('.side-bar').style.width = '200px';
-    // }
-    // if (e.target.id = 'mainId' ) {
-    //     document.querySelector('.side-bar').style.width = '0px';
-    // }
-
-    // problem both these if statments firing make seperate event functions?
-    // whats more practical? Also need to add e listener for if clicked on header/footer
-    // or make something if clicked != sidebar more efficient
-    
-
+        num = 1;
+    }
 }
 
 function renderOff(e) {
-    if (e.target.id != '.side-bar' ) {
+    // if (!sideBar.contains(e.target)) {
         document.querySelector('.side-bar').style.width = '0px';
-    }
+    // }
 }
 
 
