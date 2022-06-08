@@ -1,12 +1,15 @@
 import _, { difference } from 'lodash';
 import './styles/style.css';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
-import { faMeteor } from "@fortawesome/free-solid-svg-icons/faMeteor";
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
 
 
-library.add(faMeteor);
-dom.watch();
+
+// library.add(faMeteor);
+// dom.watch();
 
 // import Icon from './components/menu.png';
 
@@ -20,9 +23,9 @@ nonMenu.addEventListener('click',renderOff);
 
 
 function render(e) {
-    if (e.target.className = 'menu-png') {
+    // if (e.target.className = 'fa fa-bars') {
         document.querySelector('.side-bar').style.width = '200px';
-    }
+    // }
 }
 
 function renderOff(e) {
