@@ -1,4 +1,4 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import './styles/style.css';
 // import Icon from './components/menu.png';
 
@@ -13,7 +13,7 @@ nonMenu.addEventListener('click',renderOff);
 let num = 0;
 
 function render(e) {
-    if (e.target.className = 'menu-png'){
+    if (e.target.className = 'menu-png') {
         document.querySelector('.side-bar').style.width = '200px';
         num = 1;
     }
