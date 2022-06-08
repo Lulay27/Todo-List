@@ -1,5 +1,13 @@
-// import _ from 'lodash';
+import _, { difference } from 'lodash';
 import './styles/style.css';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
+import { faMeteor } from "@fortawesome/free-solid-svg-icons/faMeteor";
+
+
+library.add(faMeteor);
+dom.watch();
+
 // import Icon from './components/menu.png';
 
 const menuBtn = document.querySelector('.menu-btn');
@@ -10,12 +18,10 @@ const sideBar = document.querySelector('.side-bar');
 menuBtn.addEventListener('click',render);
 nonMenu.addEventListener('click',renderOff);
 
-let num = 0;
 
 function render(e) {
     if (e.target.className = 'menu-png') {
         document.querySelector('.side-bar').style.width = '200px';
-        num = 1;
     }
 }
 
