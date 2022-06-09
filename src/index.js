@@ -26,12 +26,14 @@ nonMenu.addEventListener('click',renderOff);
 function render(e) {
     // if (e.target.className = 'fa fa-bars') {
         document.querySelector('.side-bar').style.width = '200px';
+        document.querySelector('.main').style.marginLeft = '200px';
     // }
 }
 
 function renderOff(e) {
     // if (!sideBar.contains(e.target)) {
         document.querySelector('.side-bar').style.width = '0px';
+        document.querySelector('.main').style.marginLeft = '0px';
     // }
 }
 
