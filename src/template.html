@@ -12,7 +12,7 @@
 
         <div class="menu-btn-container">
             <button class="menu-btn">
-                <i id="menu-png" class="fa fa-bars"></i>
+                <i id="menu-icon" class="fa fa-bars"></i>
                 <!-- <img class="menu-png" id="menuPng" src="./components/menu.png"> -->
             </button>
         </div>   
@@ -23,22 +23,30 @@
 
         <div class="side-bar">
             <button id="inbox-btn" class="side-bar-btn"><i class="fa fa-inbox"></i>Inbox</button>
-            <button id="today-btn" class="side-bar-btn">Today</button>
-            <button id="upcoming-btn" class="side-bar-btn">Upcoming</button>
-            <button id="projects-btn" class="side-bar-btn">Projects</button>
+            <button id="today-btn" class="side-bar-btn"><i class="fa fa-star"></i>Today</button>
+            <button id="upcoming-btn" class="side-bar-btn"><i class="fa fa-calendar-days"></i>Upcoming</button>
+            <button id="projects-btn" class="side-bar-btn"><i class="fa fa-list-check"></i>Projects</button>
         </div>
     </div>
 
     
     <div class="main" id="mainId">
 
-        <!-- make main have a background color inside that box
-        have the info for todo lists etc -->
+        <button class="add-todo-btn">Add Todo</button>
 
-        <div class="projects">
-            <i class="fas fa-meteor"></i>
-            blah blah
+        <div class="form-container">
+            <form class="todo-form" style="display:none;">
+                    <label for="title-txt">Title</label>
+                    <input type="text" id="title-txt"> <br>
+                    <label for="due-txt">Due date</label>
+                    <input type="text" id="due-txt"> <br>
+                    <label for="prio-txt">Priority</label>
+                    <input type="text" id="prio-txt"> <br>
+                    <label for="note-txt">Note</label>
+                    <input type="text" id="note-txt"> <br>
+            </form>
         </div>
+        
     </div>
     
 

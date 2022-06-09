@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
+import DOM from './DOM.js';
 
 
 
@@ -33,6 +34,8 @@ function renderOff(e) {
         document.querySelector('.side-bar').style.width = '0px';
     // }
 }
+
+const main = document.querySelector('.main');
 
 
 
