@@ -34,6 +34,14 @@ const DOM = (() => {
     function submitTodo(e) {
         const title = document.querySelector('#title-txt').value;
         alert(title);
+        const dueDate = document.querySelector('#due-txt').value;
+        alert(dueDate);
+        const prio = document.querySelector('#prio-txt').value;
+        alert(prio);
+        const note = document.querySelector('#note-txt').value;
+        alert(note);
+
+        // turn alerts into object items and append into array later import from a js file for displaying
     }
 
     return {
