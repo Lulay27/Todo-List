@@ -1,3 +1,5 @@
+import todos from './task,js';
+
 const DOM = (() => {
 
     // DOM constants
