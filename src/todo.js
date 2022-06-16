@@ -1,29 +1,25 @@
-// todo constructor
-const todo = (title,note,due,prio) => {
+// todo constructor factory
+// const todo = (title,note,due,prio) => {
 
-    const getTitle = () => title;
-    const getNote = () => note;
-    const getDue = () => due;
-    const getPrio = () => prio;
-
-
-    return {getTitle,getNote,getDue,getPrio}
-};
-
-// function todo(title,note,due,prio) {
-//     this.title = title;
-//     this.note = note;
-//     this.due = due;
-//     this.prio = prio;
-// }
+//     const getTitle = () => title;
+//     const getNote = () => note;
+//     const getDue = () => due;
+//     const getPrio = () => prio;
 
 
-// const todos = () => {
-//     this.title = title;
-//     this.note = note;
-//     this.due = due;
-//     this.prio = prio;
-// }
 
+//     return {getTitle,getNote,getDue,getPrio}
+// };
 
-export default todo;
+function Todo(title,note,due,prio) {
+    this.title = title;
+    this.note = note;
+    this.due = due;
+    this.prio = prio;
+
+    function getTitle() {
+        return this.title;
+    }
+}
+
+export default Todo;

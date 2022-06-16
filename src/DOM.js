@@ -1,4 +1,4 @@
-// import todos from './task.js';
+import Todo from './todo.js';
 
 const DOM = (() => {
 
@@ -8,11 +8,12 @@ const DOM = (() => {
     const menuBtn = document.querySelector('.menu-btn');
     const nonMenu = document.querySelector('.main');
     const submitBtn = document.querySelector('.submit-btn');
+    const myArr = [];
     // Event Listeners
     todo.addEventListener('click', todoFormDis);
     menuBtn.addEventListener('click',sideBarDis);
     nonMenu.addEventListener('click',sideBarOff);
-    submitBtn.addEventListener('click',submitTodo)
+    submitBtn.addEventListener('click',addTodo)
 
     function todoFormDis(e) {
         if (form.style.display == 'block') {
@@ -33,22 +34,22 @@ const DOM = (() => {
         document.querySelector('.main').style.marginLeft = '0px';
     }
 
-    function submitTodo(e) {
+    function addTodo(e) {
         const title = document.querySelector('#title-txt').value;
-        alert(title);
         const dueDate = document.querySelector('#due-txt').value;
-        alert(dueDate);
         const prio = document.querySelector('#prio-txt').value;
-        alert(prio);
         const note = document.querySelector('#note-txt').value;
-        alert(note);
 
+        const newTodo = new Todo(title,dueDate,prio,note);
+        myArr.push(newTodo);
         // turn alerts into object items and append into array later import from a js file for displaying
+        alert(DOM.myArr[0]);
     }
 
     return {
 
-    }
+        myArr
+    };
 
 })();
 

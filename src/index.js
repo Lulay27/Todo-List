@@ -5,14 +5,17 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 import DOM from './DOM.js';
-import todo from './todo.js';
+import Todo from './todo.js';
+import { dom } from '@fortawesome/fontawesome-svg-core';
 
-// const work = new todo('tents','setting up tents','tmr',1);
-const work = todo('tents','setting up tents','tmr',1);
+// arr test to see if items inside are todos working
 
-work.getTitle;
+// for (let i = 0; i < DOM.myArr; i++) {
+//     alert(DOM.myArr[i].title);
+// }
 
-// alert()
+// alert(DOM.myArr[0]);
+
 
 
 
