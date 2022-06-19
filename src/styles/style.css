@@ -9,6 +9,7 @@
     display: flex;
     /* padding: 10px; */
     height: auto;
+    background-color: rgb(201, 170, 104);
 }
 
 #menu-icon {
@@ -18,7 +19,7 @@
 }
 
 .menu-btn {
-    background-color: white;
+    background-color: rgb(201, 170, 104);
     cursor: pointer;
     border: none;
     margin: 10px 0px 0px 10px
@@ -77,6 +78,10 @@ button svg {
     height: 100%;
     transition: margin-left 0.5s;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form-container {

@@ -1,4 +1,5 @@
 import Todo from './todo.js';
+import page from './page.js';
 
 const DOM = (() => {
 
@@ -8,12 +9,14 @@ const DOM = (() => {
     const menuBtn = document.querySelector('.menu-btn');
     const nonMenu = document.querySelector('.main');
     const submitBtn = document.querySelector('.submit-btn');
+    const sideBar = document.querySelector('.side-bar');
     const myArr = [];
     // Event Listeners
     todo.addEventListener('click', todoFormDis);
     menuBtn.addEventListener('click',sideBarDis);
     nonMenu.addEventListener('click',sideBarOff);
     submitBtn.addEventListener('click',addTodo)
+    sideBar.addEventListener('click', sideBarBtn)
 
     function todoFormDis(e) {
         if (form.style.display == 'block') {
@@ -22,6 +25,15 @@ const DOM = (() => {
         else if (form.style.display == 'none') {
             form.style.display = 'block';
         }
+    }
+
+    function sideBarBtn(e) {
+
+        if (e.target.id = 'inbox-btn') {
+            page.pagetest('test please work');
+        }
+
+        console.log(e.target);
     }
 
     function sideBarDis(e) {

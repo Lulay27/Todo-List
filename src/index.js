@@ -8,13 +8,10 @@ import DOM from './DOM.js';
 import Todo from './todo.js';
 import { dom } from '@fortawesome/fontawesome-svg-core';
 
-// arr test to see if items inside are todos working
 
-// for (let i = 0; i < DOM.myArr; i++) {
-//     alert(DOM.myArr[i].title);
-// }
 
-// alert(DOM.myArr[0]);
+// page('casdsssssssssssssssssssoolsds');
+
 
 
 

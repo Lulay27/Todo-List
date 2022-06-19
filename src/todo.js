@@ -17,9 +17,8 @@ function Todo(title,note,due,prio) {
     this.due = due;
     this.prio = prio;
 
-    function getTitle() {
-        return this.title;
-    }
 }
+
+
 
 export default Todo;
