@@ -4,7 +4,7 @@ import page from './page.js';
 const DOM = (() => {
 
     // DOM constants
-    const todo = document.querySelector('.add-todo-btn');
+    // const todo = document.querySelector('.add-todo-btn');
     const form = document.querySelector('.form-container');
     const menuBtn = document.querySelector('.menu-btn');
     const nonMenu = document.querySelector('.main');
@@ -12,20 +12,20 @@ const DOM = (() => {
     const sideBar = document.querySelector('.side-bar');
     const myArr = [];
     // Event Listeners
-    todo.addEventListener('click', todoFormDis);
+    // todo.addEventListener('click', todoFormDis);
     menuBtn.addEventListener('click',sideBarDis);
     nonMenu.addEventListener('click',sideBarOff);
     submitBtn.addEventListener('click',addTodo)
     sideBar.addEventListener('click', sideBarBtn)
 
-    function todoFormDis(e) {
-        if (form.style.display == 'block') {
-            form.style.display = 'none';
-        }
-        else if (form.style.display == 'none') {
-            form.style.display = 'block';
-        }
-    }
+    // function todoFormDis(e) {
+    //     if (form.style.display == 'block') {
+    //         form.style.display = 'none';
+    //     }
+    //     else if (form.style.display == 'none') {
+    //         form.style.display = 'block';
+    //     }
+    // }
 
     function sideBarBtn(e) {
         if (e.target.id == 'inbox-btn') {
