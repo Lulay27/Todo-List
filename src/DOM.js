@@ -30,10 +30,10 @@ const DOM = (() => {
     function sideBarBtn(e) {
 
         if (e.target.id = 'inbox-btn') {
-            page.pagetest('test please work');
+            page('INBOX');
         }
 
-        console.log(e.target);
+        // console.log(e.target);
     }
 
     function sideBarDis(e) {

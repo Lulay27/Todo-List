@@ -7,17 +7,6 @@ import '@fortawesome/fontawesome-free/js/brands'
 import DOM from './DOM.js';
 import Todo from './todo.js';
 import { dom } from '@fortawesome/fontawesome-svg-core';
+import page from './page.js';
 
-
-
-// page('casdsssssssssssssssssssoolsds');
-
-
-
-
-
-
-
-
-
- 
+// page();
