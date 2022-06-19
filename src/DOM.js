@@ -28,12 +28,18 @@ const DOM = (() => {
     }
 
     function sideBarBtn(e) {
-
-        if (e.target.id = 'inbox-btn') {
-            page('INBOX');
+        if (e.target.id == 'inbox-btn') {
+            page('Inbox');
         }
-
-        // console.log(e.target);
+        if (e.target.id == 'today-btn') {
+            page('Today');
+        }
+        if (e.target.id == 'week-btn') {
+            page('Week');
+        }
+        if (e.target.id == 'projects-btn') {
+            page('Projects');
+        }
     }
 
     function sideBarDis(e) {
@@ -51,15 +57,12 @@ const DOM = (() => {
         const dueDate = document.querySelector('#due-txt').value;
         const prio = document.querySelector('#prio-txt').value;
         const note = document.querySelector('#note-txt').value;
-
         const newTodo = new Todo(title,dueDate,prio,note);
         myArr.push(newTodo);
-        // turn alerts into object items and append into array later import from a js file for displaying
         alert(DOM.myArr[0]);
     }
 
     return {
-
         myArr
     };
 
