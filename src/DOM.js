@@ -8,7 +8,7 @@ const DOM = (() => {
     const form = document.querySelector('.form-container');
     const menuBtn = document.querySelector('.menu-btn');
     const nonMenu = document.querySelector('.main');
-    const submitBtn = document.querySelector('.submit-btn');
+    const submitBtn = document.querySelector('.plus-btn');
     const sideBar = document.querySelector('.side-bar');
     const myArr = [];
     // Event Listeners
@@ -52,13 +52,15 @@ const DOM = (() => {
         document.querySelector('.main').style.marginLeft = '0px';
     }
 
-    function addTodo(e) {
-        const title = document.querySelector('#title-txt').value;
-        const dueDate = document.querySelector('#due-txt').value;
-        const prio = document.querySelector('#prio-txt').value;
-        const note = document.querySelector('#note-txt').value;
-        const newTodo = new Todo(title,dueDate,prio,note);
+    // fix this b/c changed UI to input title first and add other data l8r
+    function addTodo(e) { 
+        const title = document.querySelector('#title-input').value;
+        // const dueDate = document.querySelector('#due-txt').value;
+        // const prio = document.querySelector('#prio-txt').value;
+        // const note = document.querySelector('#note-txt').value;
+        const newTodo = new Todo(title);
         myArr.push(newTodo);
+        // function to display todo
         alert(DOM.myArr[0]);
     }
 

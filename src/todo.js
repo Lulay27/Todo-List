@@ -11,6 +11,7 @@
 //     return {getTitle,getNote,getDue,getPrio}
 // };
 
+// traditional constructor
 function Todo(title,note,due,prio) {
     this.title = title;
     this.note = note;
