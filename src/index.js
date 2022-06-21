@@ -15,4 +15,4 @@ import {render} from './todo.js';
 // make event listener where click anywhere but sidebar to close it
 // DOM.js a bit messy.. do I want to have my array in there? clean up (e)
 
-render();
+// render();

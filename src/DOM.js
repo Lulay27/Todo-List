@@ -1,4 +1,4 @@
-import Todo from './todo.js';
+import Todo, { render } from './todo.js';
 import page from './page.js';
 
 const DOM = (() => {
@@ -50,6 +50,7 @@ const DOM = (() => {
         const newTodo = new Todo(title);
         myArr.push(newTodo);
         // function to display todo
+        render();   // adds to main the todo
         console.log(DOM.myArr[0]);
     }
 
