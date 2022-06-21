@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    list-style: none;
 }
 
 .header {
@@ -76,14 +77,32 @@ button {
 
 .main-title {
     font-size: 45px;
+}
+
+.task-container {
+
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    /* border: black solid 1px; */
+}
+
+#todo-input {
+    height: 40px;
+}
+
+.todo-container {
+    height: 40px;
+    width: 400px;
     
 }
 
 .form-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    border: black solid 1px;
+    /* flex-direction: column; */
+    /* border: black solid 1px; */
+    /* flex-direction: column-reverse; */
 }
 
 input[type=text] {

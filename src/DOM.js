@@ -43,7 +43,7 @@ const DOM = (() => {
 
     // fix this b/c changed UI to input title first and add other data l8r
     function addTitle(e) { 
-        const title = document.querySelector('#title-input').value;
+        const title = document.querySelector('#todo-input').value;
         // const dueDate = document.querySelector('#due-txt').value;
         // const prio = document.querySelector('#prio-txt').value;
         // const note = document.querySelector('#note-txt').value;
