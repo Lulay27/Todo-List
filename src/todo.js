@@ -8,7 +8,7 @@ function render() {
         titlediv = document.createElement('li');
         titlediv.innerHTML = DOM.myArr[i].title;
     }
-    document.querySelector('.task-container').appendChild(titlediv);
+    document.querySelector('.todo-container').appendChild(titlediv);
 }
 // todo constructor factory
 // const todo = (title,note,due,prio) => {
