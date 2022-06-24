@@ -12,7 +12,7 @@ function render() {
         </div>
         `;
 
-        // i think solution to objects not reseting is having 
+        // i think solution to objects not reseting is having splice function within single for loop so here
 
         
     }
