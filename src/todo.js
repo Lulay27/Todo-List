@@ -7,14 +7,23 @@ function render() {
         todoUI.id = "object" + i;
         todoUI.innerHTML += `
         <div class='todo-data'>
-            <input type="checkbox" class="checkbox${i}">
+            <input type="checkbox" id="checkbox${i}" class="checkBox">
             ${DOM.myArr[i].title}
         </div>
-        `
+        `;
+
+        // i think solution to objects not reseting is having 
 
         
     }
     document.querySelector('.todo-container').appendChild(todoUI);
+}
+
+function removeObj(num) {
+    const index = DOM.myArr.indexOf(num);
+    if (index > -1) {
+        DOM.myArr.splice(num,1);
+    }
 }
 
 function Todo(title,note,due,prio) {
@@ -25,4 +34,4 @@ function Todo(title,note,due,prio) {
 }
 
 export default Todo;
-export {render};
+export {render,removeObj};

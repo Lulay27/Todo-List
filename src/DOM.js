@@ -1,4 +1,4 @@
-import Todo, { render } from './todo.js';
+import Todo, { render, removeObj } from './todo.js';
 import page from './page.js';
 
 const DOM = (() => {
@@ -16,14 +16,26 @@ const DOM = (() => {
     docPage.addEventListener('click', removeCheckedBox);
     
     function removeCheckedBox(e) {
-        for (let i = 0; i < DOM.myArr.length; i++) {
-            if (document.querySelector(`.checkbox${i}`) != null) {
-                const box = document.querySelector(`.checkbox${i}`);
-                if (box.checked == true) {
-                    box.parentElement.parentElement.remove();
-                }
-            }
+
+        // console.log(e.target.type);
+
+        if (e.target.type == 'checkbox') {
+            e.target.parentElement.parentElement.remove();
         }
+
+        // problem is object names dont get reset so when you create 3 todos
+        // and remove them so page is empty the next todo is obj4
+        // somehow neatly link and reset array to dom for loops
+
+        // for (let i = 0; i < DOM.myArr.length; i++) {
+        //     if (document.querySelector(`#checkbox${i}`) != null) {
+        //         const box = document.querySelector(`.checkBox`);
+        //         if (box.checked == true) {
+        //             box.parentElement.parentElement.remove();
+        //             removeObj(i);
+        //         }
+        //     }
+        // }
     }
 
     function sideBarBtn(e) {
