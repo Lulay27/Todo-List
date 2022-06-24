@@ -82,8 +82,12 @@ button {
     margin: auto;
 }
 
+.main-title-container {
+    width: 100%;
+}
+
 .main-title {
-    font-size: 45px;
+    font-size: 35px;
 }
 
 .task-container {
