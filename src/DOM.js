@@ -7,7 +7,8 @@ const DOM = (() => {
     const nonMenu = document.querySelector('.main');
     const submitBtn = document.querySelector('.plus-btn');
     const sideBar = document.querySelector('.side-bar');
-    const docPage = document.querySelector('.container');
+    const container = document.querySelector('.container');
+    // const todoBtns = document.querySelector('.todo-data-right');
     const myArr = [
         {
         title: 'prepare for hockey',
@@ -20,13 +21,31 @@ const DOM = (() => {
     nonMenu.addEventListener('click',sideBarOff);
     submitBtn.addEventListener('click',addTitle);
     sideBar.addEventListener('click', sideBarBtn);
-    docPage.addEventListener('click', removeCheckedBox);
-    
+    container.addEventListener('click', removeCheckedBox);
+    // todoBtns.addEventListener('click',todoFunc);
 
-    
-    
+    const todoBtns = document.querySelector('.todo-container');
+        todoBtns.addEventListener('click',testerzz);
+        function testerzz(e) {
+            console.log(e.target.id);
+            if (e.target.id == 'xmark') {
+                e.target.parentElement.parentElement.remove();
+            }
+            if (e.target.id == 'cal') {
+                // remove icons and display calander input with check mark svg
+            }
+            if (e.target.id == 'book') {
+                // remove icons and display large input box with check mark svg
+            }
+            if (e.target.id == 'starz') {
+                e.target.parentElement.parentElement.style.backgroundColor ='gold';
+                // highlight in yellow ??
+            }
+            
+        }
+
     function removeCheckedBox(e) {
-        // console.log(e.target.Id);
+        // console.log(e.target.id);
         // console.log(e.target.type);
 
         if (e.target.type == 'checkbox' || e.target.className == 'cross-btn') {
