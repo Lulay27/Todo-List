@@ -16,4 +16,4 @@ import {render} from './todo.js';
 // DOM.js a bit messy.. do I want to have my array in there? clean up (e)
 // add a delete/edit svg beside every todo that gets created on right side
 
-
+render();

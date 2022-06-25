@@ -8,34 +8,31 @@ const DOM = (() => {
     const submitBtn = document.querySelector('.plus-btn');
     const sideBar = document.querySelector('.side-bar');
     const docPage = document.querySelector('.container');
-    const myArr = [];
+    const myArr = [
+        {
+        title: 'prepare for hockey',
+        note: 'make sure all gear is in bag',
+        prio: 1,
+        due: '2022-10-27',
+    },
+];
     menuBtn.addEventListener('click',sideBarDis);
     nonMenu.addEventListener('click',sideBarOff);
     submitBtn.addEventListener('click',addTitle);
     sideBar.addEventListener('click', sideBarBtn);
     docPage.addEventListener('click', removeCheckedBox);
     
-    function removeCheckedBox(e) {
 
+    
+    
+    function removeCheckedBox(e) {
+        console.log(e.target.Id);
         // console.log(e.target.type);
 
-        if (e.target.type == 'checkbox') {
+        if (e.target.type == 'checkbox' || e.target.className == 'cross-btn') {
             e.target.parentElement.parentElement.remove();
         }
 
-        // problem is object names dont get reset so when you create 3 todos
-        // and remove them so page is empty the next todo is obj4
-        // somehow neatly link and reset array to dom for loops
-
-        // for (let i = 0; i < DOM.myArr.length; i++) {
-        //     if (document.querySelector(`#checkbox${i}`) != null) {
-        //         const box = document.querySelector(`.checkBox`);
-        //         if (box.checked == true) {
-        //             box.parentElement.parentElement.remove();
-        //             removeObj(i);
-        //         }
-        //     }
-        // }
     }
 
     function sideBarBtn(e) {
@@ -64,10 +61,11 @@ const DOM = (() => {
     }
 
     function addTitle(e) { 
-        const title = document.querySelector('#todo-input').value;
-        const newTodo = new Todo(title);
+        const title = document.querySelector('#todo-input');
+        const newTodo = new Todo(title.value);
         myArr.push(newTodo);
-        render();
+        title.value ='';
+        
     }
 
     // function editTodo.... edit note/date/prio of todo 

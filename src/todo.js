@@ -9,21 +9,16 @@ function render() {
         <div class='todo-data'>
             <input type="checkbox" id="checkbox${i}" class="checkBox">
             ${DOM.myArr[i].title}
+            <button id = 'cross-btn'><i class="fa fa-xmark"></i></button>
+            <button ><i class="fa fa-calendar"></i></button>
+            <button ><i class="fa fa-notes"></i></button>
+            <button ><i class="fa fa-star"></i></button>
         </div>
+        
         `;
 
-        // i think solution to objects not reseting is having splice function within single for loop so here
-
-        
     }
     document.querySelector('.todo-container').appendChild(todoUI);
-}
-
-function removeObj(num) {
-    const index = DOM.myArr.indexOf(num);
-    if (index > -1) {
-        DOM.myArr.splice(num,1);
-    }
 }
 
 function Todo(title,note,due,prio) {
@@ -34,4 +29,4 @@ function Todo(title,note,due,prio) {
 }
 
 export default Todo;
-export {render,removeObj};
+export {render};
