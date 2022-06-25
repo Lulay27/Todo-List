@@ -6,6 +6,11 @@
     list-style: none;
 }
 
+button {
+    border: none;
+    cursor: pointer;
+}
+
 .header {
     display: flex;
     /* padding: 10px; */
@@ -46,23 +51,19 @@
     transition: 0.5s;
 }
 
-button {
-    border: none;
-    cursor: pointer;
-}
-
-
 .side-bar button {
+    
     padding: 1rem;
     font-size: 25px;
     display: flex;
     transition: 0.6s;
     color: black;
     background-color: #e4e2e2;
+    gap: 10px;
 }
 
 .side-bar button:hover {
-    color: white;
+    color: rgb(136, 150, 189);
 }
 
 .main {
@@ -95,7 +96,6 @@ button {
     flex-direction: column;
     height: auto;
     width: 100%;
-    /* border: black solid 1px; */
 }
 
 #todo-input {
@@ -112,8 +112,8 @@ object {
 }
 
 .todo-data:hover {
-    /* border-radius: 10px; */
     background-color: rgb(230, 216, 187);
+    transition: 0.5s;
 }
 
 .todo-data {
@@ -123,10 +123,9 @@ object {
 }
 
 .todo-data #xmark, #cal, #book, #starz {
-    font-size: 30px;
+    font-size: 25px;
     margin: 0px 5px 0px 5px;
-    
-
+    /* padding: 1px; */
 }
 
 .todo-data #xmark, #cal, #book, #starz:hover {
@@ -135,6 +134,12 @@ object {
 
 .todo-data-left {
     font-size: 30px;
+    padding: 2px;
+}
+
+.todo-data-right {
+    display: flex;
+    align-items: center;
 }
 
 .todo-data .object {
