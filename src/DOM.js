@@ -23,7 +23,6 @@ const DOM = (() => {
     sideBar.addEventListener('click', sideBarBtn);
     container.addEventListener('click', removeCheckedBox);
     // todoBtns.addEventListener('click',todoFunc);
-
     const todoBtns = document.querySelector('.todo-container');
         todoBtns.addEventListener('click',testerzz);
         function testerzz(e) {
@@ -33,9 +32,21 @@ const DOM = (() => {
             }
             if (e.target.id == 'cal') {
                 // remove icons and display calander input with check mark svg
+                e.target.parentElement.innerHTML = `
+                <div>
+                    <input type="date" value="2022-10-27">
+                    <i id="xmark" class="fa fa-check"></i>
+                </div>
+                `;
             }
             if (e.target.id == 'book') {
                 // remove icons and display large input box with check mark svg
+                e.target.parentElement.innerHTML = `
+                <div>
+                    <input type="text" placeholder="Notes">
+                    <i id="xmark" class="fa fa-check"></i>
+                </div>
+                `;
             }
             if (e.target.id == 'starz') {
                 e.target.parentElement.parentElement.style.backgroundColor ='gold';
