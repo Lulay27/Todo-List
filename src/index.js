@@ -10,10 +10,9 @@ import { dom } from '@fortawesome/fontawesome-svg-core';
 import page from './page.js';
 import {render} from './todo.js';
 
-// fix spacing of css work on css !! learn sass
-// centering of To-Do List title a bit off fix
-// make event listener where click anywhere but sidebar to close it
-// DOM.js a bit messy.. do I want to have my array in there? clean up (e)
-// add a delete/edit svg beside every todo that gets created on right side
+// problem with todo svg onclicks not working need to click few times
+// later on todo title click change the title name of todo
+// going to need to extract date data for other sidebar tabs
+// change side bar today icon to something not a star
 
 render();
