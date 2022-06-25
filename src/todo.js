@@ -5,14 +5,19 @@ function render() {
     for (let i = 0; i < DOM.myArr.length; i++) {
         todoUI = document.createElement("div");
         todoUI.id = "object" + i;
+        todoUI.className = "object";
         todoUI.innerHTML += `
         <div class='todo-data'>
-            <input type="checkbox" id="checkbox${i}" class="checkBox">
-            ${DOM.myArr[i].title}
-            <button id = 'cross-btn'><i class="fa fa-xmark"></i></button>
-            <button ><i class="fa fa-calendar"></i></button>
-            <button ><i class="fa fa-notes"></i></button>
-            <button ><i class="fa fa-star"></i></button>
+            <div class="todo-data-left">
+                <input type="checkbox" id="checkbox${i}" class="checkBox">
+                ${DOM.myArr[i].title}
+            </div>
+            <div class="todo-data-right">
+                <i id="xmark" class="fa fa-xmark"></i>
+                <i id="cal" class="fa fa-calendar-days"></i>
+                <i id="book" class="fa fa-book-open"></i>
+                <i id="starz" class="fa fa-star"></i>
+            </div>
         </div>
         
         `;

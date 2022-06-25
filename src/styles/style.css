@@ -103,23 +103,47 @@ button {
 }
 
 .todo-container {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
     height: auto;
     width: auto;
 }
 
- li {
-    font-size: 20px;
+object {
+   
+}
+
+.todo-data:hover {
+    /* border-radius: 10px; */
+    background-color: rgb(230, 216, 187);
+}
+
+.todo-data {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px 10px 0px;
+}
+
+.todo-data #xmark, #cal, #book, #starz {
+    font-size: 30px;
+    margin: 0px 5px 0px 5px;
+    
+
+}
+
+.todo-data #xmark, #cal, #book, #starz:hover {
+    cursor: pointer;
+}
+
+.todo-data-left {
+    font-size: 30px;
+}
+
+.todo-data .object {
+    
 }
 
 .form-container {
     display: flex;
     align-items: center;
-    /* flex-direction: column; */
-    /* border: black solid 1px; */
-    /* flex-direction: column-reverse; */
 }
 
 #plus-icon {

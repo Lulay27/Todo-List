@@ -26,7 +26,7 @@ const DOM = (() => {
     
     
     function removeCheckedBox(e) {
-        console.log(e.target.Id);
+        // console.log(e.target.Id);
         // console.log(e.target.type);
 
         if (e.target.type == 'checkbox' || e.target.className == 'cross-btn') {
@@ -65,7 +65,7 @@ const DOM = (() => {
         const newTodo = new Todo(title.value);
         myArr.push(newTodo);
         title.value ='';
-        
+        render();
     }
 
     // function editTodo.... edit note/date/prio of todo 
