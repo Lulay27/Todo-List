@@ -26,7 +26,7 @@ const DOM = (() => {
     const todoBtns = document.querySelector('.todo-container');
         todoBtns.addEventListener('click',testerzz);
         function testerzz(e) {
-            console.log(e.target.id);
+            // console.log(e.target.id);
             if (e.target.id == 'xmark') {
                 e.target.parentElement.parentElement.remove();
             }
@@ -35,7 +35,7 @@ const DOM = (() => {
                 e.target.parentElement.innerHTML = `
                 <div>
                     <input type="date" value="2022-10-27">
-                    <i id="xmark" class="fa fa-check"></i>
+                    <i id="date-check" class="fa fa-check"></i>
                 </div>
                 `;
             }
@@ -44,13 +44,24 @@ const DOM = (() => {
                 e.target.parentElement.innerHTML = `
                 <div>
                     <input type="text" placeholder="Notes">
-                    <i id="xmark" class="fa fa-check"></i>
+                    <i id="note-check" class="fa fa-check"></i>
                 </div>
                 `;
             }
             if (e.target.id == 'starz') {
                 e.target.parentElement.parentElement.style.backgroundColor ='gold';
                 // highlight in yellow ??
+            }
+
+            if (e.target.id == 'date-check') {
+                // locate object with title name? for loop to iterate through?
+                // create function that finds object in array with key and value
+                console.log(e.target.parentElement.parentElement.parentElement.parentElement.id);
+                
+            }
+            if (e.target.id == 'note-check') {
+                
+                
             }
             
         }

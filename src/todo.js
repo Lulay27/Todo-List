@@ -4,13 +4,15 @@ let todoUI;
 function render() {
     for (let i = 0; i < DOM.myArr.length; i++) {
         todoUI = document.createElement("div");
-        todoUI.id = "object" + i;
+        todoUI.id = i;
         todoUI.className = "object";
         todoUI.innerHTML += `
         <div class='todo-data'>
             <div class="todo-data-left">
                 <input type="checkbox" id="checkbox${i}" class="checkBox">
-                ${DOM.myArr[i].title}
+                <div id=title-value>
+                    ${DOM.myArr[i].title}
+                </div>
             </div>
             <div class="todo-data-right">
                 <i id="xmark" class="fa fa-xmark"></i>

@@ -133,8 +133,14 @@ object {
 }
 
 .todo-data-left {
+    display: flex;
+    align-items: center;
     font-size: 30px;
-    padding: 2px;
+    /* padding: 2px; */
+}
+
+#title-value {
+    padding-left: 5px;
 }
 
 .todo-data-right {
