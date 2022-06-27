@@ -34,7 +34,7 @@ const DOM = (() => {
                 // remove icons and display calander input with check mark svg
                 e.target.parentElement.innerHTML = `
                 <div>
-                    <input type="date" value="2022-10-27">
+                    <input type="date" id="date-input" value="2022-10-27">
                     <i id="date-check" class="fa fa-check"></i>
                 </div>
                 `;
@@ -43,7 +43,7 @@ const DOM = (() => {
                 // remove icons and display large input box with check mark svg
                 e.target.parentElement.innerHTML = `
                 <div>
-                    <input type="text" placeholder="Notes">
+                    <input type="text" id="note-input" placeholder="Notes">
                     <i id="note-check" class="fa fa-check"></i>
                 </div>
                 `;
@@ -54,14 +54,26 @@ const DOM = (() => {
             }
 
             if (e.target.id == 'date-check') {
-                // locate object with title name? for loop to iterate through?
-                // create function that finds object in array with key and value
-                console.log(e.target.parentElement.parentElement.parentElement.parentElement.id);
-                
+                const index = e.target.parentElement.parentElement.parentElement.parentElement.id;
+                const calValue = e.target.previousElementSibling.value;
+                myArr[index].due = calValue;
+                e.target.parentElement.parentElement.innerHTML = `
+                    <i id="xmark" class="fa fa-xmark"></i>
+                    <i id="cal" class="fa fa-calendar-days"></i>
+                    <i id="book" class="fa fa-book-open"></i>
+                    <i id="starz" class="fa fa-star"></i>
+                `;
             }
             if (e.target.id == 'note-check') {
-                
-                
+                const index = e.target.parentElement.parentElement.parentElement.parentElement.id;
+                const noteValue = e.target.previousElementSibling.value;
+                myArr[index].note = noteValue;
+                e.target.parentElement.parentElement.innerHTML = `
+                    <i id="xmark" class="fa fa-xmark"></i>
+                    <i id="cal" class="fa fa-calendar-days"></i>
+                    <i id="book" class="fa fa-book-open"></i>
+                    <i id="starz" class="fa fa-star"></i>
+                `;
             }
             
         }
