@@ -16,7 +16,7 @@ const DOM = (() => {
         prio: 1,
         due: '2022-10-27',
     },
-];
+    ];
     menuBtn.addEventListener('click',sideBarDis);
     nonMenu.addEventListener('click',sideBarOff);
     submitBtn.addEventListener('click',addTitle);
@@ -24,8 +24,8 @@ const DOM = (() => {
     container.addEventListener('click', removeCheckedBox);
     // todoBtns.addEventListener('click',todoFunc);
     const todoBtns = document.querySelector('.todo-container');
-        todoBtns.addEventListener('click',testerzz);
-        function testerzz(e) {
+        todoBtns.addEventListener('click',todoEdit);
+        function todoEdit(e) {
             // console.log(e.target.id);
             if (e.target.id == 'xmark') {
                 e.target.parentElement.parentElement.remove();
@@ -34,7 +34,7 @@ const DOM = (() => {
                 // remove icons and display calander input with check mark svg
                 e.target.parentElement.innerHTML = `
                 <div>
-                    <input type="date" id="date-input" value="2022-10-27">
+                    <input type="date" id="date-input">
                     <i id="date-check" class="fa fa-check"></i>
                 </div>
                 `;
@@ -79,9 +79,6 @@ const DOM = (() => {
         }
 
     function removeCheckedBox(e) {
-        // console.log(e.target.id);
-        // console.log(e.target.type);
-
         if (e.target.type == 'checkbox' || e.target.className == 'cross-btn') {
             e.target.parentElement.parentElement.remove();
         }
@@ -94,6 +91,7 @@ const DOM = (() => {
         }
         if (e.target.id == 'today-btn') {
             page('Today');
+            
         }
         if (e.target.id == 'week-btn') {
             page('Week');

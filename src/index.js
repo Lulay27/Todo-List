@@ -14,5 +14,17 @@ import {render} from './todo.js';
 // later on todo title click change the title name of todo
 // going to need to extract date data for other sidebar tabs
 // change side bar today icon to something not a star
+// maybe for the priority create another array and another forloop
+// appends prio labeled todos into new arr and displays that arr
+// before the normal arr
+
+// make it so when u change date twice old one is saved in there?
+
+// today and week will be same but diff is today/week lol
+// display (ui interaction only in inbox/project)
+// displays in boxes? the todos similar to library display?
+// projects added to sidebar
+// clicking on each projects opens up ui similar to today week
+// but for projects
 
 render();
