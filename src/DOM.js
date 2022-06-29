@@ -1,5 +1,6 @@
 import Todo, { render, removeObj } from './todo.js';
 import page from './page.js';
+import { UpcomingTodos } from './page.js';
 
 const DOM = (() => {
 
@@ -57,6 +58,7 @@ const DOM = (() => {
                 const index = e.target.parentElement.parentElement.parentElement.parentElement.id;
                 const calValue = e.target.previousElementSibling.value;
                 myArr[index].due = calValue;
+                UpcomingTodos();
                 e.target.parentElement.parentElement.innerHTML = `
                     <i id="xmark" class="fa fa-xmark"></i>
                     <i id="cal" class="fa fa-calendar-days"></i>
@@ -86,6 +88,8 @@ const DOM = (() => {
 
     function sideBarBtn(e) {
         if (e.target.id == 'inbox-btn') {
+            document.querySelector('.task-container').style.display = "block";
+            document.querySelector('.week-container').style.display = "none";
             page('Inbox');
         }
         if (e.target.id == 'today-btn') {
@@ -93,6 +97,8 @@ const DOM = (() => {
             
         }
         if (e.target.id == 'week-btn') {
+            document.querySelector('.task-container').style.display = "none";
+            document.querySelector('.week-container').style.display = "block";
             page('Week');
         }
         if (e.target.id == 'projects-btn') {
@@ -116,6 +122,11 @@ const DOM = (() => {
         myArr.push(newTodo);
         title.value ='';
         render();
+        // UpcomingTodos();
+
+        // testing
+        
+
     }
 
     // function editTodo.... edit note/date/prio of todo 

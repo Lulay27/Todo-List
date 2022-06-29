@@ -21,9 +21,7 @@ function render() {
                 <i id="starz" class="fa fa-star"></i>
             </div>
         </div>
-        
         `;
-
     }
     document.querySelector('.todo-container').appendChild(todoUI);
 }
