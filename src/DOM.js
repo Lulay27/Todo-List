@@ -75,7 +75,6 @@ const DOM = (() => {
                     <i id="starz" class="fa fa-star"></i>
                 `;
             }
-            
         }
 
     function removeCheckedBox(e) {

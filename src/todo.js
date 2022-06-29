@@ -35,5 +35,7 @@ function Todo(title,note,due,prio) {
     this.prio = prio;
 }
 
+// function to display all attributes
+
 export default Todo;
 export {render};
