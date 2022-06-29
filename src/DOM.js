@@ -90,15 +90,20 @@ const DOM = (() => {
         if (e.target.id == 'inbox-btn') {
             document.querySelector('.task-container').style.display = "block";
             document.querySelector('.week-container').style.display = "none";
+            document.querySelector('.today-container').style.display = "none";
             page('Inbox');
         }
         if (e.target.id == 'today-btn') {
             page('Today');
+            document.querySelector('.today-container').style.display = "block";
+            document.querySelector('.week-container').style.display = "none";
+            document.querySelector('.task-container').style.display = "none";
             
         }
         if (e.target.id == 'week-btn') {
-            document.querySelector('.task-container').style.display = "none";
             document.querySelector('.week-container').style.display = "block";
+            document.querySelector('.task-container').style.display = "none";
+            document.querySelector('.today-container').style.display = "none";
             page('Week');
         }
         if (e.target.id == 'projects-btn') {

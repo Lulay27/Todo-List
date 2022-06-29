@@ -7,16 +7,8 @@ const page = (name) => {
 };
 
 function UpcomingTodos() {  // creates today and week pages
-    // let todoToday;
-     let todoWeek;
-
-    
-
-    // const todoToday = document.createElement("div");
-    // todoToday.style.display = 'none';
-    // todoToday.className = "today-container";
-    // document.querySelector('.main-container').appendChild(todoToday);
-
+    let todoToday;
+    let todoWeek;
 
     for (let i = 0; i < DOM.myArr.length; i++) {
         const todoDate = parseISO(DOM.myArr[i].due);
@@ -29,16 +21,17 @@ function UpcomingTodos() {  // creates today and week pages
             </div>
             `;
         }
-
-        // else if (isToday(todoDate) == true) {
-        //     todoToday.innerHTML += `
-        //     <div>
-        //         ${DOM.myArr[i].title} ${DOM.myArr[i].due} ${DOM.myArr[i].note}
-        //     </div>
-        //     `;
-        //     // document.querySelector('.main-container').appendChild(todoToday);
-        // }        
-    } document.querySelector('.week-container').appendChild(todoWeek);
+        if (isToday(todoDate) == true) {
+            todoToday = document.createElement("div");
+            todoToday.innerHTML += `
+            <div>
+                ${DOM.myArr[i].title} ${DOM.myArr[i].due} ${DOM.myArr[i].note}
+            </div>
+            `;
+        }        
+    } 
+    document.querySelector('.week-container').appendChild(todoWeek);
+    document.querySelector('.today-container').appendChild(todoToday);
 }
 
 

@@ -26,5 +26,11 @@ import {onLoad} from './onLoad.js';
 // clicking on each projects opens up ui similar to today week
 // but for projects
 
+// problem with duplicates if I were to change date to same date
+// soln? dom for editing todos change objects explcitly
+// while diff dom displays objects explicitly
+
+// inThisWeek set option to sunday as first day in week
+
 render();   // only here for the hard coded object I coded for testing
 onLoad();

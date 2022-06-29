@@ -1,7 +1,8 @@
 import DOM from './DOM.js'
 
-let todoUI;
+
 function render() {
+    let todoUI;
     for (let i = 0; i < DOM.myArr.length; i++) {
         todoUI = document.createElement("div");
         todoUI.id = i;

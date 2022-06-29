@@ -6,6 +6,6 @@ export function onLoad() {
 
     const day = document.createElement("div");
     day.style.display = 'none';
-    day.className = "day-container";
+    day.className = "today-container";
     document.querySelector('.main-container').appendChild(day);
 }
