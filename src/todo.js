@@ -2,9 +2,12 @@ import DOM from './DOM.js'
 
 
 function render() {
-    let todoUI;
-    for (let i = 0; i < DOM.myArr.length; i++) {
-        todoUI = document.createElement("div");
+    // let todoUI;
+    // for (let i = 0; i < DOM.myArr.length; i++) {
+        // testing new way to display array of objects
+        const i = DOM.myArr.length-1;
+        // const i = DOM.myArr[lastObj];
+        const todoUI = document.createElement("div");
         todoUI.id = i;
         todoUI.className = "object";
         todoUI.innerHTML += `
@@ -23,8 +26,9 @@ function render() {
             </div>
         </div>
         `;
-    }
     document.querySelector('.todo-container').appendChild(todoUI);
+    // }
+    
 }
 
 function Todo(title,note,due,prio) {

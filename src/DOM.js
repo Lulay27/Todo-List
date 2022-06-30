@@ -59,13 +59,15 @@ const DOM = (() => {
                 `;
             }
             if (e.target.matches('.starz')) {
-                e.target.parentElement.parentElement.style.backgroundColor ='gold';
+                // e.target.parentElement.parentElement.style.backgroundColor ='gold';
+                // function set priority high med low display in that order in inbox
+                // for week/today just highlight a color
                 // highlight in yellow ??
             }
 
             if (e.target.matches('.date-check')) {
                 // replace this long line of text with e.target.closest() method
-                const index = e.target.parentElement.parentElement.parentElement.parentElement.id;
+                const index = e.target.closest('.object').id;
                 const calValue = e.target.previousElementSibling.value;
                 myArr[index].due = calValue;
                 UpcomingTodos();
@@ -77,7 +79,7 @@ const DOM = (() => {
                 `;
             }
             if (e.target.matches('.note-check')) {
-                const index = e.target.parentElement.parentElement.parentElement.parentElement.id;
+                const index = e.target.closest('.object').id;
                 const noteValue = e.target.previousElementSibling.value;
                 myArr[index].note = noteValue;
                 e.target.parentElement.parentElement.innerHTML = `
@@ -94,7 +96,7 @@ const DOM = (() => {
             e.target.parentElement.parentElement.remove();
         }
     }
-
+    // change to matches later for all if statements
     function sideBarBtn(e) {
         if (e.target.id == 'inbox-btn') {
             document.querySelector('.task-container').style.display = "block";
@@ -103,11 +105,10 @@ const DOM = (() => {
             page('Inbox');
         }
         if (e.target.id == 'today-btn') {
-            page('Today');
             document.querySelector('.today-container').style.display = "block";
             document.querySelector('.week-container').style.display = "none";
             document.querySelector('.task-container').style.display = "none";
-            
+            page('Today');
         }
         if (e.target.id == 'week-btn') {
             document.querySelector('.week-container').style.display = "block";

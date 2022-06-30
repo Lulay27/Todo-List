@@ -27,10 +27,15 @@ import {onLoad} from './onLoad.js';
 // but for projects
 
 // problem with duplicates if I were to change date to same date
-// soln? dom for editing todos change objects explcitly
-// while diff dom displays objects explicitly
+// soln?
+// delete old display when creating new one inside forloop
 
 // inThisWeek set option to sunday as first day in week
+
+// checkmark-btns should be where display for week/today is updated
+
+// FUNCTIONS TO MAKE TO REDUCE MESSY CODE
+//
 
 render();   // only here for the hard coded object I coded for testing
 onLoad();
