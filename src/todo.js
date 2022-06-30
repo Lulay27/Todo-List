@@ -3,10 +3,10 @@ import DOM from './DOM.js'
 
 function render() {
     // let todoUI;
-    // for (let i = 0; i < DOM.myArr.length; i++) {
-        // testing new way to display array of objects
-        const i = DOM.myArr.length-1;
-        // const i = DOM.myArr[lastObj];
+    const todoContainer = document.querySelector('.todo-container');
+    todoContainer.innerHTML="";
+    for (let i = 0; i < DOM.myArr.length; i++) {
+    
         const todoUI = document.createElement("div");
         todoUI.id = i;
         todoUI.className = "object";
@@ -26,8 +26,8 @@ function render() {
             </div>
         </div>
         `;
-    document.querySelector('.todo-container').appendChild(todoUI);
-    // }
+        todoContainer.appendChild(todoUI);
+    }
     
 }
 

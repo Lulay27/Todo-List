@@ -34,6 +34,15 @@ import {onLoad} from './onLoad.js';
 
 // checkmark-btns should be where display for week/today is updated
 
+// soln to linking inbox with today/week
+// have all 3 pages source the myArr
+// when deleting obj need to use splice
+// on check-mark-btn press update all 3 pages ---> activate method
+// on update() can ether have 3 diff updates or single one
+// but for each of the 3 methods delete old display
+// and create the new display and append !!!!
+
+
 // FUNCTIONS TO MAKE TO REDUCE MESSY CODE
 //
 

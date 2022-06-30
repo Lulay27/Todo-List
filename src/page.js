@@ -7,9 +7,11 @@ const page = (name) => {
 };
 
 function UpcomingTodos() {  // creates today and week pages
-
-    // for (let i = 0; i < DOM.myArr.length; i++) {
-        const i = DOM.myArr.length-1;
+    const week = document.querySelector('.week-container');
+    const today = document.querySelector('.today-container');
+    week.innerHTML="";
+    today.innerHTML="";
+    for (let i = 0; i < DOM.myArr.length; i++) {
         const todoDate = parseISO(DOM.myArr[i].due);
 
         if (isThisWeek(todoDate) == true) {
@@ -19,7 +21,7 @@ function UpcomingTodos() {  // creates today and week pages
                 ${DOM.myArr[i].title} ${DOM.myArr[i].due} ${DOM.myArr[i].note}
             </div>
             `;
-            document.querySelector('.week-container').appendChild(todoWeek);
+            week.appendChild(todoWeek);
         }
         if (isToday(todoDate) == true) {
             const todoToday = document.createElement("div");
@@ -28,9 +30,9 @@ function UpcomingTodos() {  // creates today and week pages
                 ${DOM.myArr[i].title} ${DOM.myArr[i].due} ${DOM.myArr[i].note}
             </div>
             `;
-            document.querySelector('.today-container').appendChild(todoToday);
+            today.appendChild(todoToday);
         }  
-    // }
+    }
 }
 
 

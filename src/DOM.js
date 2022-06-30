@@ -36,8 +36,7 @@ const DOM = (() => {
             // e.stopPropagation();
             // e.preventDefault();
             // console.log(e.target.id);
-            if (e.target.matches('.xmark')) {
-                console.log('swag');
+            if (e.target.matches('.xmark')) {   // combine this with checkmark??
                 e.target.parentElement.parentElement.remove();
             }
             if (e.target.matches('.cal')) {
@@ -91,14 +90,16 @@ const DOM = (() => {
             }
         }
 
-    function removeCheckedBox(e) {
-        if (e.target.type == 'checkbox' || e.target.className == 'cross-btn') {
-            e.target.parentElement.parentElement.remove();
+    function removeCheckedBox(e) {  // need to splice array
+        if (e.target.type == 'checkbox' || e.target.className == 'cross-btn') { //cross-btn?
+            const index = e.target.closest('.object').id;
+            DOM.myArr.splice(index,1);  // remove 1 element at index i
+            e.target.parentElement.parentElement.remove();  // change this to closest
         }
     }
     // change to matches later for all if statements
     function sideBarBtn(e) {
-        if (e.target.id == 'inbox-btn') {
+        if (e.target.id == 'inbox-btn') {   //matches change
             document.querySelector('.task-container').style.display = "block";
             document.querySelector('.week-container').style.display = "none";
             document.querySelector('.today-container').style.display = "none";
