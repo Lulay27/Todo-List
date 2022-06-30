@@ -4,6 +4,12 @@ import { UpcomingTodos } from './page.js';
 
 const DOM = (() => {
 
+    // tester event
+
+    // window.addEventListener('click', (e) => {
+    //     console.log(e.target);
+    // })
+
     const menuBtn = document.querySelector('.menu-btn');
     const nonMenu = document.querySelector('.main');
     const submitBtn = document.querySelector('.plus-btn');
@@ -27,54 +33,58 @@ const DOM = (() => {
     const todoBtns = document.querySelector('.todo-container');
         todoBtns.addEventListener('click',todoEdit);
         function todoEdit(e) {
+            // e.stopPropagation();
+            // e.preventDefault();
             // console.log(e.target.id);
-            if (e.target.id == 'xmark') {
+            if (e.target.matches('.xmark')) {
+                console.log('swag');
                 e.target.parentElement.parentElement.remove();
             }
-            if (e.target.id == 'cal') {
+            if (e.target.matches('.cal')) {
                 // remove icons and display calander input with check mark svg
                 e.target.parentElement.innerHTML = `
                 <div>
                     <input type="date" id="date-input">
-                    <i id="date-check" class="fa fa-check"></i>
+                    <button class="date-check"><i id="date-check-img" class="fa fa-check"></i></button>
                 </div>
                 `;
             }
-            if (e.target.id == 'book') {
+            if (e.target.matches('.book')) {
                 // remove icons and display large input box with check mark svg
                 e.target.parentElement.innerHTML = `
                 <div>
                     <input type="text" id="note-input" placeholder="Notes">
-                    <i id="note-check" class="fa fa-check"></i>
+                    <button class="note-check"><i id="note-check-img" class="fa fa-check"></i></button>
                 </div>
                 `;
             }
-            if (e.target.id == 'starz') {
+            if (e.target.matches('.starz')) {
                 e.target.parentElement.parentElement.style.backgroundColor ='gold';
                 // highlight in yellow ??
             }
 
-            if (e.target.id == 'date-check') {
+            if (e.target.matches('.date-check')) {
+                // replace this long line of text with e.target.closest() method
                 const index = e.target.parentElement.parentElement.parentElement.parentElement.id;
                 const calValue = e.target.previousElementSibling.value;
                 myArr[index].due = calValue;
                 UpcomingTodos();
                 e.target.parentElement.parentElement.innerHTML = `
-                    <i id="xmark" class="fa fa-xmark"></i>
-                    <i id="cal" class="fa fa-calendar-days"></i>
-                    <i id="book" class="fa fa-book-open"></i>
-                    <i id="starz" class="fa fa-star"></i>
+                    <button class="xmark"><i id ="xmark-img" class="fa fa-xmark"></i></button>
+                    <button class="cal"><i id ="cal-img" class="fa fa-calendar-days"></i></button>
+                    <button class="book"><i id ="book-img" class="fa fa-book-open"></i></button>
+                    <button class="starz"><i id ="starz-img" class="fa fa-star"></i></button>
                 `;
             }
-            if (e.target.id == 'note-check') {
+            if (e.target.matches('.note-check')) {
                 const index = e.target.parentElement.parentElement.parentElement.parentElement.id;
                 const noteValue = e.target.previousElementSibling.value;
                 myArr[index].note = noteValue;
                 e.target.parentElement.parentElement.innerHTML = `
-                    <i id="xmark" class="fa fa-xmark"></i>
-                    <i id="cal" class="fa fa-calendar-days"></i>
-                    <i id="book" class="fa fa-book-open"></i>
-                    <i id="starz" class="fa fa-star"></i>
+                    <button class="xmark"><i id ="xmark-img" class="fa fa-xmark"></i></button>
+                    <button class="cal"><i id ="cal-img" class="fa fa-calendar-days"></i></button>
+                    <button class="book"><i id ="book-img" class="fa fa-book-open"></i></button>
+                    <button class="starz"><i id ="starz-img" class="fa fa-star"></i></button>
                 `;
             }
         }
@@ -83,7 +93,6 @@ const DOM = (() => {
         if (e.target.type == 'checkbox' || e.target.className == 'cross-btn') {
             e.target.parentElement.parentElement.remove();
         }
-
     }
 
     function sideBarBtn(e) {

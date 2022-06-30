@@ -122,13 +122,19 @@ object {
     margin: 10px 0px 10px 0px;
 }
 
-.todo-data #xmark, #cal, #book, #starz {
-    font-size: 25px;
+#xmark-img, #cal-img, #book-img, #starz-img {
+    
+}
+
+.todo-data .xmark, .cal, .book, .starz, .date-check, .note-check {
+    width: 35px;
+    height: 35px;
+    /* font-size: 25px; */
     margin: 0px 5px 0px 5px;
     /* padding: 1px; */
 }
 
-.todo-data #xmark, #cal, #book, #starz:hover {
+.todo-data .xmark, .cal, .book, .starz:hover {
     cursor: pointer;
 }
 
