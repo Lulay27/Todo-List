@@ -5,10 +5,10 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 import DOM from './DOM.js';
-import Todo from './todo.js';
+import Todo from './todotester.js';
 import { dom } from '@fortawesome/fontawesome-svg-core';
 import page from './page.js';
-import {render} from './todo.js';
+import {render} from './todotester.js';
 import {UpcomingTodos} from './page.js';
 import {onLoad} from './onLoad.js';
 
@@ -42,6 +42,13 @@ import {onLoad} from './onLoad.js';
 // but for each of the 3 methods delete old display
 // and create the new display and append !!!!
 
+// model view controllers
+
+// view webpages and clicking 
+
+// model database, data etc 
+    
+// controller middle man
 
 // FUNCTIONS TO MAKE TO REDUCE MESSY CODE
 //

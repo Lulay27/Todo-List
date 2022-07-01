@@ -1,8 +1,6 @@
 import DOM from './DOM.js'
 
-
-function render() {
-    // let todoUI;
+function render() { // displays todos in inbox controller
     const todoContainer = document.querySelector('.todo-container');
     todoContainer.innerHTML="";
     for (let i = 0; i < DOM.myArr.length; i++) {

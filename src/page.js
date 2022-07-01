@@ -6,7 +6,7 @@ const page = (name) => {
     
 };
 
-function UpcomingTodos() {  // creates today and week pages
+function UpcomingTodos() {  // displays week and today pages controller
     const week = document.querySelector('.week-container');
     const today = document.querySelector('.today-container');
     week.innerHTML="";
