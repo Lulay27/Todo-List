@@ -4,13 +4,13 @@ import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
-import DOM from './DOM.js';
-import Todo from './todotester.js';
+import DOM from './oldfiles/DOM.js';
+import Todo from './oldfiles/todotester.js';
 import { dom } from '@fortawesome/fontawesome-svg-core';
-import page from './page.js';
-import {render} from './todotester.js';
-import {UpcomingTodos} from './page.js';
-import {onLoad} from './onLoad.js';
+import page from './oldfiles/page.js';
+import {render} from './oldfiles/todotester.js';
+import {UpcomingTodos} from './oldfiles/page.js';
+import {onLoad} from './oldfiles/onLoad.js';
 
 // problem with todo svg onclicks not working need to click few times
 // later on todo title click change the title name of todo
@@ -49,6 +49,8 @@ import {onLoad} from './onLoad.js';
 // model database, data etc 
     
 // controller middle man
+
+// work on how pages displayed --> 
 
 // FUNCTIONS TO MAKE TO REDUCE MESSY CODE
 //

@@ -11,3 +11,4 @@ function deleteTodo(index) {
     todoArr.splice(index,1);
 }
 
+export {todoArr,addTodo,deleteTodo}
