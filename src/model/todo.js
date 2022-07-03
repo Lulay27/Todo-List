@@ -16,44 +16,44 @@ export class Todo {
         }
     }
 
-    // get prio() {
-    //     return this._prio;
-    // }
+    get prio() {
+        return this._prio;
+    }
 
-    // set prio(newPrio) {
-    //     if (newPrio) {
-    //         this._prio = newPrio;
-    //     }
-    // }
+    set prio(newPrio) {
+        if (newPrio) {
+            this._prio = newPrio;
+        }
+    }
     
-    // get due() {
-    //     return this._due;
-    // }
+    get due() {
+        return this._due;
+    }
 
-    // set due(newDue) {
-    //     if (newDue) {
-    //         this._due = newDue;    
-    //     }
-    // }
+    set due(newDue) {
+        if (newDue) {
+            this._due = newDue;    
+        }
+    }
 
-    // get note() {
-    //     return this._note;
-    // }
+    get note() {
+        return this._note;
+    }
 
-    // set note(newNote) {
-    //     if (newNote) {
-    //         this._note = newNote;    
-    //     }
-    // }
+    set note(newNote) {
+        if (newNote) {
+            this._note = newNote;    
+        }
+    }
 
-    // get id() {
-    //     return this._id;
-    // }
+    get id() {
+        return this._id;
+    }
 
-    // set id(newId) {
-    //     if (newId) {
-    //         this._id = newId;
-    //     }
-    // }
+    set id(newId) {
+        if (newId) {
+            this._id = newId;
+        }
+    }
     // add get/set for title later when adding function for that in view
 }
