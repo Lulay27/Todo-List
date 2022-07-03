@@ -1,10 +1,16 @@
-import { addTodo } from '../model/editTodo.js';
-import Todo from './todo.js';
+import { displayTodoArray } from '../view/displayTodo.js';
+import {submitBtn,todoInput} from '../view/domConstants.js';
+import { createTodo } from '../view/domHelperFunctions.js';
 
 // adding a todo
-submitBtn.addEventListener('click', (e)=> {
-    const titleVal = getElement("#todo-input");
-    titleVal.value =""; // might add this elsewhere kinda more view
-    const newTodo = new Todo(titleVal.value);
-    addTodo(newTodo);
-});
+const EventListeners = () => {
+    submitBtn.addEventListener('click', (e)=> {
+        createTodo(todoInput.value);
+        displayTodoArray();
+    });
+}
+
+export {EventListeners}
+
+
+

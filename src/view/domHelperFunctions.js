@@ -1,6 +1,15 @@
+import { addTodo } from '../model/editTodo.js';
+// import * as Todo from "../model/Todo.js";
+import {Todo} from "../model/Todo.js";
 
-// creates element with tag type and class name
-function createElement(tag,className) {
+// creates todo with setTitle(value) and adds that todo to array
+export function createTodo(value) {
+    const newTodo = new Todo();
+    newTodo.title = value;
+    addTodo(newTodo);
+}
+
+export function createElement(tag,className) {
     const element = document.createElement(tag);
     if (className) element.classList.add(className);
 
@@ -9,7 +18,7 @@ function createElement(tag,className) {
 
 // only use inside when element hasnt been created yet b/c im using constants already created
 // gets element with class or id
-function getElement(selector) {
+export function getElement(selector) {
     return element = document.querySelector(selector);
     // return element;
 }

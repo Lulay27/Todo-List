@@ -6,26 +6,54 @@ export class Todo {
         this.prio = prio;
         this.id = id;
     }
+    get title() {
+        return this._title;
+    }
+
+    set title(newTitle) {
+        if (newTitle) {
+            return this._title = newTitle;
+        }
+    }
+
+    // get prio() {
+    //     return this._prio;
+    // }
+
+    // set prio(newPrio) {
+    //     if (newPrio) {
+    //         this._prio = newPrio;
+    //     }
+    // }
     
-    get getId() {
-        return this.id;
-    }
+    // get due() {
+    //     return this._due;
+    // }
 
-    get getDue() {
-        return this.due;
-    }
+    // set due(newDue) {
+    //     if (newDue) {
+    //         this._due = newDue;    
+    //     }
+    // }
 
-    set setDue(newDue) {
-        this.due = newDue;
-    }
+    // get note() {
+    //     return this._note;
+    // }
 
-    get getNote() {
-        return this.note;
-    }
+    // set note(newNote) {
+    //     if (newNote) {
+    //         this._note = newNote;    
+    //     }
+    // }
 
-    set setNote(newNote) {
-        this.note = newNote;
-    }
+    // get id() {
+    //     return this._id;
+    // }
 
+    // set id(newId) {
+    //     if (newId) {
+    //         this._id = newId;
+    //     }
+    // }
     // add get/set for title later when adding function for that in view
 }

@@ -1,4 +1,4 @@
-import DOM from "./DOM";
+// import DOM from "./DOM";
 import {isThisWeek, parseISO, isToday} from 'date-fns';
 
 const page = (name) => {

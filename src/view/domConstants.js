@@ -22,14 +22,18 @@ const bookHTML = `
 
 // must exist intially so week/today must be created inside controller functions
 // might turn this into object so its private since some names are repeated ex. main
+
 const menuBtn = document.querySelector('.menu-btn');
 const main = document.querySelector('.main');
 const mainContainer = document.querySelector('.main-container');
-const submitBtn = document.querySelector('.plus-btn');
+export const submitBtn = document.querySelector('.plus-btn');
 const sideBar = document.querySelector('.side-bar');
 const container = document.querySelector('.container');
-const todoContainer = document.querySelector('.todo-container');
+export const todoContainer = document.querySelector('.todo-container');
 const weekContainer = document.querySelector('.week-container');
 const todayContainer = document.querySelector('.today-container');
+export const todoInput = document.querySelector('#todo-input');
 // const array for obj??
 
+
+// when u get back figure out how to export all these constants cleaner into other files

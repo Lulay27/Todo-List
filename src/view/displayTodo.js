@@ -1,32 +1,34 @@
 // import DOM constants?
 
+import { todoArr } from "../model/editTodo";
+import {Todo} from "../model/Todo.js"
+import {todoContainer,todoInput} from '../view/domConstants.js';
+import {createElement} from '../view/domHelperFunctions.js';
+
 
 // displays (single) the object and assigns it an index id
 // going to move forloop outside this function so this
 // becomes a true view module
 function displayInboxTodo(todoName,index) {
-    // todoContainer.innerHTML=""; add this with for loop in controller
-    // for (let i = 0; i < todoArr.length; i++) {
-        const todoElement = createElement("div",".object");
-        todoElement.id = index; // might not need this
-        todoElement.innerHTML = `
-        <div class='todo-data'>
-            <div class="todo-data-left">
-                <input type="checkbox" class="checkBox">
-                <div id=title-value>
-                    ${todoName}
-                </div>
-            </div>
-            <div class="todo-data-right">
-                <button class="xmark"><i id ="xmark-img" class="fa fa-xmark"></i></button>
-                <button class="cal"><i id ="cal-img" class="fa fa-calendar-days"></i></button>
-                <button class="book"><i id ="book-img" class="fa fa-book-open"></i></button>
-                <button class="starz"><i id ="starz-img" class="fa fa-star"></i></button>
+    const todoElement = createElement("div",".object");
+    todoElement.id = index; // might not need this
+    todoElement.innerHTML = `
+    <div class='todo-data'>
+        <div class="todo-data-left">
+            <input type="checkbox" class="checkBox">
+            <div id=title-value>
+                ${todoName}
             </div>
         </div>
-        `;
-        todoContainer.appendChild(todoElement);
-    // }
+        <div class="todo-data-right">
+            <button class="xmark"><i id ="xmark-img" class="fa fa-xmark"></i></button>
+            <button class="cal"><i id ="cal-img" class="fa fa-calendar-days"></i></button>
+            <button class="book"><i id ="book-img" class="fa fa-book-open"></i></button>
+            <button class="starz"><i id ="starz-img" class="fa fa-star"></i></button>
+        </div>
+    </div>
+    `;
+    todoContainer.appendChild(todoElement);
 }
 
 //displays a single todo in today add to innerHTML
@@ -55,4 +57,17 @@ function displayWeekTodo(todoDate) {
 
 // }
 
-export {displayInboxTodo,displayTodayTodo,displayWeekTodo};
+function displayTodoArray() {
+    todoInput.value ="";
+    todoContainer.innerHTML="";
+    for (let i = 0; i < todoArr.length; i++) {
+        displayInboxTodo(todoArr[i].title,i);
+    }
+}
+
+export {
+    displayInboxTodo,
+    displayTodayTodo,
+    displayWeekTodo,
+    displayTodoArray,
+};
