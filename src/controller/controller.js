@@ -1,8 +1,11 @@
 import { deleteTodo, todoArr } from '../model/editTodo.js';
 import { displayTodoArray } from '../view/displayTodo.js';
-import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, TodoIconsHTML} from '../view/domConstants.js';
+import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, menuBtn, main} from '../view/domConstants.js';
 import { createTodoTitle } from '../view/domHelperFunctions.js';
+import { sidebarLength } from '../view/uiDOM.js';
 
+//test
+// const tester = document.querySelector('.menu-btn');
 
 const EventListeners = () => {
     // submitting a todo
@@ -39,6 +42,13 @@ const EventListeners = () => {
         }
     })
 
+    menuBtn.addEventListener('click', (e) => {
+        sidebarLength('200');
+    })
+
+    main.addEventListener('click', (e) => {
+        sidebarLength('0');
+    })
 }
 
 export {EventListeners}

@@ -23,14 +23,14 @@ export const bookHTML = `
 // must exist intially so week/today must be created inside controller functions
 // might turn this into object so its private since some names are repeated ex. main
 
-const menuBtn = document.querySelector('.menu-btn');
-const main = document.querySelector('.main');
+export const menuBtn = document.querySelector('.menu-btn');
+export const main = document.querySelector('.main');
 const mainContainer = document.querySelector('.main-container');
 export const submitBtn = document.querySelector('.plus-btn');
 const sideBar = document.querySelector('.side-bar');
 const container = document.querySelector('.container');
-export const todoContainer = document.querySelector('.todo-container');
-export const weekContainer = document.querySelector('.week-container');
+export const todoContainer = document.querySelector('.todo-container');     // problem
+export const weekContainer = document.querySelector('.week-container');     // problem same. Detail in index.js
 export const todayContainer = document.querySelector('.today-container');
 export const todoInput = document.querySelector('#todo-input');
 export const todoBtns = document.querySelector('.todo-container');

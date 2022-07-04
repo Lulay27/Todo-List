@@ -63,7 +63,6 @@ function displayTodoArray() {
     todoInput.value ="";
     todoContainer.innerHTML="";
     
-    
     for (let i = 0; i < todoArr.length; i++) {
         const todoDate = parseISO(todoArr[i].due);
         displayInboxTodo(todoArr[i].title,i);

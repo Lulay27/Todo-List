@@ -17,11 +17,17 @@ import '@fortawesome/fontawesome-free/js/brands'
 // import {onLoad} from './oldfiles/onLoad.js';            //USED
 
 
-// new files 
+// new files
 import {EventListeners} from './controller/controller.js';
 import {onLoad} from './oldfiles/onLoad.js';
 onLoad();
 EventListeners();
+
+// added onLoad for now just to add today/week containers will change later
+// maybe add those into event Listeners?
+// also problem in domConstatants selectors week/todayContainer
+// both get invoked prior to onLoad(); thus i have to manually
+// qselect both containers to grab em instead of importing from domContants.js
 
 // *** be careful of importing 'chains'
 
@@ -66,8 +72,4 @@ controller middle man
 
 work on how pages displayed --> 
 
-FUNCTIONS TO MAKE TO REDUCE MESSY CODE
 */
-
-// render();   // only here for the hard coded object I coded for testing
-// onLoad();
