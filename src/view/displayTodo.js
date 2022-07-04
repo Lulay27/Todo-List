@@ -2,12 +2,12 @@
 
 import { isThisWeek, isToday, parseISO } from "date-fns";
 import { todoArr } from "../model/editTodo";
-import {Todo} from "../model/Todo.js"
+// import {Todo} from "../model/Todo.js"
 import {todoContainer,todoInput,todayContainer,weekContainer} from '../view/domConstants.js';
 import {createElement} from '../view/domHelperFunctions.js';
 
 //NOTE IF WEEK/INBOX/TODAY end up looking the same
-// combine sortTodo into displayInboxTodo and rename so only 1 forloop
+// combine displayInbox/today/weekTodo into displayPageTodo so only 1 function
 
 
 // displays (single) the object and assigns it an index id
@@ -36,47 +36,54 @@ function displayInboxTodo(todoName,index) {
 }
 
 //displays a single todo in today add to innerHTML
-function displayTodayTodo(todoDate) {
+function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
     const today = document.querySelector('.today-container');
     const todoElement = createElement("div",".today-obj")
     todoElement.innerHTML = `
     <div>
-        ${todoDate}
+        <li> ${todoTitle} </li>
+        <li> ${todoNote} </li>
+        <li> ${todoDate} </li>
+        <li> ${todoPrio} </li>    
     </div>
     `;
     today.appendChild(todoElement);
 }
 
 // display single todo in week tab
-function displayWeekTodo(todoDate) {
+function displayWeekTodo(todoTitle,todoNote,todoDate,todoPrio) {
     const week = document.querySelector('.week-container');
     const todoElement = createElement("div",".week-obj")
     todoElement.innerHTML = `
     <div>
-        ${todoDate}
+        <li> ${todoTitle} </li>
+        <li> ${todoNote} </li>
+        <li> ${todoDate} </li>
+        <li> ${todoPrio} </li>
     </div>
     `;
     week.appendChild(todoElement);
 }
 
+// resets all innerHTML's for inbox/today/week and displays new todoArr contents
 function displayTodoArray() {
     todoInput.value ="";
     todoContainer.innerHTML="";
+    const week = document.querySelector('.week-container');
+    const today = document.querySelector('.today-container');
+    week.innerHTML="";
+    today.innerHTML="";
     
     for (let i = 0; i < todoArr.length; i++) {
         const todoDate = parseISO(todoArr[i].due);
         displayInboxTodo(todoArr[i].title,i);
 
         if (isThisWeek(todoDate) == true) {
-            const week = document.querySelector('.week-container');
-            week.innerHTML="";
             displayWeekTodo(todoArr[i].title);
         }
 
         if (isToday(todoDate) == true) {
-            const today = document.querySelector('.today-container');
-            today.innerHTML="";
-            displayTodayTodo(todoArr[i].title);
+            displayTodayTodo(todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
         }
     }
 }

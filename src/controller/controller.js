@@ -8,13 +8,14 @@ import { displayInboxPage, displayTodayPage, displayWeekPage, sidebarLength } fr
 // const tester = document.querySelector('.menu-btn');
 
 const EventListeners = () => {
+    
     // submitting a todo
     submitBtn.addEventListener('click', (e) => {
         createTodoTitle(todoInput.value);
         displayTodoArray();
     });
 
-    // todo edit functionality
+    // editing a single todo
     todoBtns.addEventListener('click', (e) => {
         if (e.target.matches('.cal')) {
             e.target.parentElement.innerHTML = calendarHTML;
@@ -38,11 +39,14 @@ const EventListeners = () => {
             displayTodoArray();
         }
         if (e.target.matches('.note-check')) {
-
+            const index = e.target.closest('.object').id;
+            const noteValue = e.target.previousElementSibling.value;
+            todoArr[index].note = noteValue;
+            displayTodoArray();
         }
     })
 
-    // click on menu button displays menu clicking elsewhere removes it
+    // displaying and removing sidebar
     let status = 'closed';
     document.addEventListener('click', (e) => {
         if (e.target.id == 'menu-icon') {
@@ -56,6 +60,7 @@ const EventListeners = () => {
         }
     })
 
+    // displaying pages after clicking on sidebar btns
     sideBar.addEventListener('click', (e) => {
         if (e.target.id == 'inbox-btn') {
             displayInboxPage();
