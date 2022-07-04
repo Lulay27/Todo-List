@@ -10,7 +10,7 @@ import {createElement} from '../view/domHelperFunctions.js';
 // going to move forloop outside this function so this
 // becomes a true view module
 function displayInboxTodo(todoName,index) {
-    const todoElement = createElement("div",".object");
+    const todoElement = createElement("div","object");
     todoElement.id = index; // might not need this
     todoElement.innerHTML = `
     <div class='todo-data'>

@@ -1,19 +1,19 @@
 
-const TodoIconsHTML = `
+export const TodoIconsHTML = `
 <button class="xmark"><i id ="xmark-img" class="fa fa-xmark"></i></button>
 <button class="cal"><i id ="cal-img" class="fa fa-calendar-days"></i></button>
 <button class="book"><i id ="book-img" class="fa fa-book-open"></i></button>
 <button class="starz"><i id ="starz-img" class="fa fa-star"></i></button>
 `;
 
-const calendarHTML = `
+export const calendarHTML = `
 <div>
     <input type="date" id="date-input">
     <button class="date-check"><i id="date-check-img" class="fa fa-check"></i></button>
 </div>
 `;
 
-const bookHTML = `
+export const bookHTML = `
 <div>
     <input type="text" id="note-input" placeholder="Notes">
     <button class="note-check"><i id="note-check-img" class="fa fa-check"></i></button>
@@ -33,6 +33,7 @@ export const todoContainer = document.querySelector('.todo-container');
 const weekContainer = document.querySelector('.week-container');
 const todayContainer = document.querySelector('.today-container');
 export const todoInput = document.querySelector('#todo-input');
+export const todoBtns = document.querySelector('.todo-container');
 // const array for obj??
 
 
