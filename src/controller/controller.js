@@ -42,12 +42,25 @@ const EventListeners = () => {
         }
     })
 
-    menuBtn.addEventListener('click', (e) => {
-        sidebarLength('200');
-    })
+    // menuBtn.addEventListener('click', (e) => {  // might combine these listeners into main.
+    //     if(e.target.class = 'menu-btn') {
+    //         console.log('peanuts');
+    //     }
+    //     sidebarLength('200');
+    // })
 
-    main.addEventListener('click', (e) => {
-        sidebarLength('0');
+    // click on menu button displays menu clicking elsewhere removes it
+    let status = 'closed';
+    document.addEventListener('click', (e) => {
+        if (e.target.id == 'menu-icon') {
+            if (status == 'closed') {
+                sidebarLength('200');
+                status = 'open';
+            }
+        } else if (status == 'open') {
+            sidebarLength('0');
+            status = 'closed';
+        }
     })
 }
 
