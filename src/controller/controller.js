@@ -1,8 +1,8 @@
 import { deleteTodo, todoArr } from '../model/editTodo.js';
 import { displayTodoArray } from '../view/displayTodo.js';
-import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, menuBtn, main} from '../view/domConstants.js';
+import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, sideBar} from '../view/domConstants.js';
 import { createTodoTitle } from '../view/domHelperFunctions.js';
-import { sidebarLength } from '../view/uiDOM.js';
+import { displayInboxPage, displayTodayPage, displayWeekPage, sidebarLength } from '../view/uiDOM.js';
 
 //test
 // const tester = document.querySelector('.menu-btn');
@@ -42,13 +42,6 @@ const EventListeners = () => {
         }
     })
 
-    // menuBtn.addEventListener('click', (e) => {  // might combine these listeners into main.
-    //     if(e.target.class = 'menu-btn') {
-    //         console.log('peanuts');
-    //     }
-    //     sidebarLength('200');
-    // })
-
     // click on menu button displays menu clicking elsewhere removes it
     let status = 'closed';
     document.addEventListener('click', (e) => {
@@ -62,6 +55,22 @@ const EventListeners = () => {
             status = 'closed';
         }
     })
+
+    sideBar.addEventListener('click', (e) => {
+        if (e.target.id == 'inbox-btn') {
+            displayInboxPage();
+        }
+
+        if (e.target.id == 'today-btn') {
+            displayTodayPage();
+        }
+
+        if (e.target.id == 'week-btn') {
+            console.log('hellllo');
+            displayWeekPage();
+        }
+    })
+    
 }
 
 export {EventListeners}

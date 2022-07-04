@@ -44,7 +44,7 @@ function displayTodayTodo(todoDate) {
         ${todoDate}
     </div>
     `;
-    today.appendChild(todoElement);Container
+    today.appendChild(todoElement);
 }
 
 // display single todo in week tab
