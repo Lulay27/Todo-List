@@ -13,15 +13,19 @@ import {createElement} from '../view/domHelperFunctions.js';
 // displays (single) the object and assigns it an index id
 // going to move forloop outside this function so this
 // becomes a true view module
-function displayInboxTodo(todoName,index) {
+function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
     const todoElement = createElement("div","object");
     todoElement.id = index; // might not need this
+
+    // testing UI looks adding date to todo title container
+
+
     todoElement.innerHTML = `
     <div class='todo-data'>
         <div class="todo-data-left">
             <input type="checkbox" class="checkBox">
             <div id=title-value>
-                ${todoName}
+                ${todoTitle} ${todoDate}
             </div>
         </div>
         <div class="todo-data-right">
@@ -76,10 +80,10 @@ function displayTodoArray() {
     
     for (let i = 0; i < todoArr.length; i++) {
         const todoDate = parseISO(todoArr[i].due);
-        displayInboxTodo(todoArr[i].title,i);
+        displayInboxTodo(i,todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
 
         if (isThisWeek(todoDate) == true) {
-            displayWeekTodo(todoArr[i].title);
+            displayWeekTodo(todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
         }
 
         if (isToday(todoDate) == true) {

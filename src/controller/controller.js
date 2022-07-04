@@ -8,7 +8,7 @@ import { displayInboxPage, displayTodayPage, displayWeekPage, sidebarLength } fr
 // const tester = document.querySelector('.menu-btn');
 
 const EventListeners = () => {
-    
+
     // submitting a todo
     submitBtn.addEventListener('click', (e) => {
         createTodoTitle(todoInput.value);
@@ -26,18 +26,21 @@ const EventListeners = () => {
         if (e.target.matches('.starz')) {
             // something later maybe 3 levels of prio
         }
+        // deleting todo
         if (e.target.type == 'checkbox' || e.target.matches('.xmark')) {
             const index = e.target.closest('.object').id;   // make this a function?
             deleteTodo(index);
             displayTodoArray();
         }
         
+        // adds date input to e.target todo obj
         if (e.target.matches('.date-check')) {
             const index = e.target.closest('.object').id;
             const calValue = e.target.previousElementSibling.value;
             todoArr[index].due = calValue;
             displayTodoArray();
         }
+        // adds note input to e.target todo obj
         if (e.target.matches('.note-check')) {
             const index = e.target.closest('.object').id;
             const noteValue = e.target.previousElementSibling.value;
