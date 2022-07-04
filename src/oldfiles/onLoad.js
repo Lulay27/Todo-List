@@ -1,3 +1,4 @@
+// import { weekContainer, todayContainer } from "../view/domConstants";
 export function onLoad() {
     const week = document.createElement("div");
     week.style.display = 'none';

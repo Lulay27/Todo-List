@@ -1,9 +1,13 @@
 // import DOM constants?
 
+import { isThisWeek, isToday, parseISO } from "date-fns";
 import { todoArr } from "../model/editTodo";
 import {Todo} from "../model/Todo.js"
-import {todoContainer,todoInput} from '../view/domConstants.js';
+import {todoContainer,todoInput,todayContainer,weekContainer} from '../view/domConstants.js';
 import {createElement} from '../view/domHelperFunctions.js';
+
+//NOTE IF WEEK/INBOX/TODAY end up looking the same
+// combine sortTodo into displayInboxTodo and rename so only 1 forloop
 
 
 // displays (single) the object and assigns it an index id
@@ -33,35 +37,48 @@ function displayInboxTodo(todoName,index) {
 
 //displays a single todo in today add to innerHTML
 function displayTodayTodo(todoDate) {
+    const today = document.querySelector('.today-container');
     const todoElement = createElement("div",".today-obj")
     todoElement.innerHTML = `
     <div>
         ${todoDate}
     </div>
     `;
-    todayContainer.appendChild(todoElement);Container
+    today.appendChild(todoElement);Container
 }
 
 // display single todo in week tab
 function displayWeekTodo(todoDate) {
+    const week = document.querySelector('.week-container');
     const todoElement = createElement("div",".week-obj")
     todoElement.innerHTML = `
     <div>
         ${todoDate}
     </div>
     `;
-    weekContainer.appendChild(todoElement);
+    week.appendChild(todoElement);
 }
-
-// function AddTodoArray() {
-
-// }
 
 function displayTodoArray() {
     todoInput.value ="";
     todoContainer.innerHTML="";
+    
+    
     for (let i = 0; i < todoArr.length; i++) {
+        const todoDate = parseISO(todoArr[i].due);
         displayInboxTodo(todoArr[i].title,i);
+
+        if (isThisWeek(todoDate) == true) {
+            const week = document.querySelector('.week-container');
+            week.innerHTML="";
+            displayWeekTodo(todoArr[i].title);
+        }
+
+        if (isToday(todoDate) == true) {
+            const today = document.querySelector('.today-container');
+            today.innerHTML="";
+            displayTodayTodo(todoArr[i].title);
+        }
     }
 }
 

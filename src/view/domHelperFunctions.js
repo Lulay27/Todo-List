@@ -2,8 +2,13 @@ import { addTodo } from '../model/editTodo.js';
 // import * as Todo from "../model/Todo.js";
 import {Todo} from "../model/Todo.js";
 
+// move this into displayTodo.js
+// change displayTodo.js to todoFunctions.js?
 // creates todo with setTitle(value) and adds that todo to array
-export function createTodo(value) {
+
+// split this into more functions??
+
+export function createTodoTitle(value) {
     const newTodo = new Todo();
     newTodo.title = value;
     addTodo(newTodo);

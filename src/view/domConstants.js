@@ -30,8 +30,8 @@ export const submitBtn = document.querySelector('.plus-btn');
 const sideBar = document.querySelector('.side-bar');
 const container = document.querySelector('.container');
 export const todoContainer = document.querySelector('.todo-container');
-const weekContainer = document.querySelector('.week-container');
-const todayContainer = document.querySelector('.today-container');
+export const weekContainer = document.querySelector('.week-container');
+export const todayContainer = document.querySelector('.today-container');
 export const todoInput = document.querySelector('#todo-input');
 export const todoBtns = document.querySelector('.todo-container');
 // const array for obj??

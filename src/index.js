@@ -19,6 +19,8 @@ import '@fortawesome/fontawesome-free/js/brands'
 
 // new files 
 import {EventListeners} from './controller/controller.js';
+import {onLoad} from './oldfiles/onLoad.js';
+onLoad();
 EventListeners();
 
 // *** be careful of importing 'chains'
