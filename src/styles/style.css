@@ -117,8 +117,8 @@ object {
 }
 
 .todo-data {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 10px 0px 10px 0px;
 }
 
@@ -141,7 +141,8 @@ object {
 .todo-data-left {
     display: flex;
     align-items: center;
-    font-size: 30px;
+    font-size: 25px;
+    gap: 50px;
     /* padding: 2px; */
 }
 
@@ -150,6 +151,11 @@ object {
 }
 
 .todo-data-right {
+    display: flex;
+    align-items: center;
+}
+
+.todo-data-mid {
     display: flex;
     align-items: center;
 }
@@ -172,3 +178,6 @@ object {
 input[type=text] {
    
 }
+
+/* today page */
+

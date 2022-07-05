@@ -21,7 +21,15 @@ const EventListeners = () => {
             e.target.parentElement.innerHTML = calendarHTML;
         }
         if (e.target.matches('.book')) {
-            e.target.parentElement.innerHTML = bookHTML;
+            const index = e.target.closest('.object').id;
+
+            // spaces getting removed in input value, but the todoArr[i].note has spaces?
+
+            e.target.parentElement.innerHTML = `<div>
+            <input type="text" id="note-input" style="white-space: pre" value="${todoArr[index].note}">
+            <button class="note-check"><i id="note-check-img" class="fa fa-check"></i></button>
+        </div>
+        `;
         }
         if (e.target.matches('.starz')) {
             // something later maybe 3 levels of prio
@@ -44,7 +52,9 @@ const EventListeners = () => {
         if (e.target.matches('.note-check')) {
             const index = e.target.closest('.object').id;
             const noteValue = e.target.previousElementSibling.value;
+            e.target.previousElementSibling.value = noteValue;
             todoArr[index].note = noteValue;
+            
             displayTodoArray();
         }
     })
@@ -74,7 +84,6 @@ const EventListeners = () => {
         }
 
         if (e.target.id == 'week-btn') {
-            console.log('hellllo');
             displayWeekPage();
         }
     })

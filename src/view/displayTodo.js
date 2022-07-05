@@ -25,7 +25,12 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
         <div class="todo-data-left">
             <input type="checkbox" class="checkBox">
             <div id=title-value>
-                ${todoTitle} ${todoDate}
+                ${todoTitle}
+            </div>
+        </div>
+        <div class="todo-data-mid">
+            <div id=date-value>
+                ${todoDate}
             </div>
         </div>
         <div class="todo-data-right">
@@ -42,14 +47,12 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
 //displays a single todo in today add to innerHTML
 function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
     const today = document.querySelector('.today-container');
-    const todoElement = createElement("div",".today-obj")
+    const todoElement = createElement("div",".today-todo-container")
     todoElement.innerHTML = `
-    <div>
         <li> ${todoTitle} </li>
         <li> ${todoNote} </li>
         <li> ${todoDate} </li>
         <li> ${todoPrio} </li>    
-    </div>
     `;
     today.appendChild(todoElement);
 }
