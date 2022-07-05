@@ -29,6 +29,10 @@ EventListeners();
 // both get invoked prior to onLoad(); thus i have to manually
 // qselect both containers to grab em instead of importing from domContants.js
 
+// note pad show to user what line they are on?
+// also note pad has some empty spaces inside that is annoying prob
+// from note default parameters
+
 // *** be careful of importing 'chains'
 
 /*

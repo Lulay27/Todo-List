@@ -49,11 +49,24 @@ function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
     const today = document.querySelector('.today-container');
     const todoElement = createElement("div",".today-todo-container")
     todoElement.innerHTML = `
-        <li> ${todoTitle} </li>
-        <li> ${todoNote} </li>
-        <li> ${todoDate} </li>
-        <li> ${todoPrio} </li>    
-    `;
+    <div class='todo-data'>
+        <div class="todo-data-left">
+            <div id=title-value>
+                ${todoTitle}
+            </div>
+        </div>
+        <div class="todo-data-mid">
+            <div id=date-value>
+                ${todoDate}
+            </div>
+        </div>
+        <div class="todo-data-right">
+            <div id=note-value>
+                ${todoNote}
+            </div>
+        </div>
+    </div>
+`;
     today.appendChild(todoElement);
 }
 
@@ -62,13 +75,24 @@ function displayWeekTodo(todoTitle,todoNote,todoDate,todoPrio) {
     const week = document.querySelector('.week-container');
     const todoElement = createElement("div",".week-obj")
     todoElement.innerHTML = `
-    <div>
-        <li> ${todoTitle} </li>
-        <li> ${todoNote} </li>
-        <li> ${todoDate} </li>
-        <li> ${todoPrio} </li>
+    <div class='todo-data'>
+        <div class="todo-data-left">
+            <div id=title-value>
+                ${todoTitle}
+            </div>
+        </div>
+        <div class="todo-data-mid">
+            <div id=date-value>
+                ${todoDate}
+            </div>
+        </div>
+        <div class="todo-data-right">
+            <div id=note-value>
+                ${todoNote}
+            </div>
+        </div>
     </div>
-    `;
+`;
     week.appendChild(todoElement);
 }
 

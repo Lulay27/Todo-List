@@ -52,7 +52,6 @@ button {
 }
 
 .side-bar button {
-    
     padding: 1rem;
     font-size: 25px;
     display: flex;
@@ -148,6 +147,10 @@ object {
 
 #title-value {
     padding-left: 5px;
+}
+
+#note-input {
+    height: 80px;
 }
 
 .todo-data-right {

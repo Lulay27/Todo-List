@@ -16,19 +16,23 @@ const EventListeners = () => {
     });
 
     // editing a single todo
-    todoBtns.addEventListener('click', (e) => {
-        if (e.target.matches('.cal')) {
-            e.target.parentElement.innerHTML = calendarHTML;
-        }
-        if (e.target.matches('.book')) {
+    todoBtns.addEventListener('click', (e) => {     
+        if (e.target.matches('.cal')) {             // turn this into function displaySavedDate
             const index = e.target.closest('.object').id;
-
-            // spaces getting removed in input value, but the todoArr[i].note has spaces?
-
-            e.target.parentElement.innerHTML = `<div>
-            <input type="text" id="note-input" style="white-space: pre" value="${todoArr[index].note}">
+            e.target.parentElement.innerHTML = `
+            <div>
+                <input type="date" id="date-input" value="${todoArr[index].due}">
+                <button class="date-check"><i id="date-check-img" class="fa fa-check"></i></button>
+            </div>
+            `;
+        }
+        if (e.target.matches('.book')) {            // turn this into function displaySavedNote
+            const index = e.target.closest('.object').id;
+            e.target.parentElement.innerHTML = `
+            <textarea type="text" id="note-input" autofocus>
+            ${todoArr[index].note}
+            </textarea>
             <button class="note-check"><i id="note-check-img" class="fa fa-check"></i></button>
-        </div>
         `;
         }
         if (e.target.matches('.starz')) {
