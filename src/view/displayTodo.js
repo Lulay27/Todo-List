@@ -127,10 +127,10 @@ function popupTest(todoTitle,todoNote,todoDate,todoPrio) {
     const popup = document.querySelector('.popup-background');
     popup.innerHTML = `
     <div class="popup-container">
-        <div class="popup-title test">${todoDate}</div>
-        <div class="popup-due test">Due: ${todoTitle} </div>
-        <div class="popup-notes test">Notes: ${todoNote} </div>
-        <img class="popup-exit " src="${exitImg}">
+        <div class="popup-title test"><b>${todoTitle}</b></div>
+        <div class="popup-due test"><b>Due:</b> ${todoDate} </div>
+        <div class="popup-notes test"><b>Notes:</b> ${todoNote} </div>
+        <img class="popup-exit" src="${exitImg}">
     </div>
     `;
 }

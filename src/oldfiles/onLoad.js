@@ -1,7 +1,8 @@
 // import { weekContainer, todayContainer } from "../view/domConstants";
 
 
-
+// for these maybe add them to template.html? so I dont have to
+// qselect them inside my controller.js
 export function onLoad() {
     const week = document.createElement("div");
     week.style.display = 'none';
@@ -16,13 +17,5 @@ export function onLoad() {
     const popup = document.createElement("div");
     popup.style.display ='none';
     popup.className = 'popup-background';
-    // popup.innerHTML = `
-    // <div class="popup-container">
-    //     <div class="popup-title test">Cleaning Dishes </div>
-    //     <div class="popup-due test">Due: </div>
-    //     <div class="popup-notes test">Notes: </div>
-    //     <img class="popup-exit " src="${reject}">
-    // </div>
-    // `;
     document.querySelector('.container').appendChild(popup);
 }

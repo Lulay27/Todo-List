@@ -34,6 +34,8 @@ export const weekContainer = document.querySelector('.week-container');     // p
 export const todayContainer = document.querySelector('.today-container');
 export const todoInput = document.querySelector('#todo-input');
 export const todoBtns = document.querySelector('.todo-container');
+export const popupBackGround = document.querySelector('.popup-background');
+export const popupContainer = document.querySelector('.popup-container');
 // const array for obj??
 
 

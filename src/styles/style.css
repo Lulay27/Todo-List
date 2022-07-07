@@ -133,7 +133,7 @@ object {
     /* padding: 1px; */
 }
 
-.todo-data .xmark, .cal, .book, .starz:hover {
+.todo-data .xmark, .cal, .book, .starz, .info-btn:hover {
     cursor: pointer;
 }
 
@@ -212,7 +212,7 @@ input[type=text] {
 }
 
 .popup-title {
-    font-size: 35px;
+    font-size: 30px;
     grid-row: 1;
     grid-column: span 2;
     

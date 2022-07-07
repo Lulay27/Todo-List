@@ -1,6 +1,6 @@
 import { deleteTodo, todoArr } from '../model/editTodo.js';
 import { displayTodoArray, popupTest } from '../view/displayTodo.js';
-import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, sideBar} from '../view/domConstants.js';
+import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, sideBar, popupBackGround, popupContainer} from '../view/domConstants.js';
 import { createTodoTitle } from '../view/domHelperFunctions.js';
 import { displayInboxPage, displayTodayPage, displayWeekPage, sidebarLength } from '../view/uiDOM.js';
 
@@ -64,10 +64,17 @@ const EventListeners = () => {
             displayTodoArray();
         }
         // displaying information about todo
-        // if (asd) {
-        //     const index = e.target.closest('.object').id;
-        //     popupTest(todoArr[index].title,todoArr[index].note,todoArr[index].due,todoArr[index].prio);
-        // }
+        if (e.target.matches('.info-btn')) {
+            const index = e.target.closest('.object').id;
+            popupTest(todoArr[index].title,todoArr[index].note,todoArr[index].due,todoArr[index].prio);
+        }
+    })
+
+    // pressing exit button exits out of popup  have to select cause of onLoad()
+    document.querySelector('.popup-background').addEventListener('click', (e) => {
+        if (e.target.className == 'popup-exit') {
+            document.querySelector('.popup-background').style.display = 'none';
+        }
     })
 
     // displaying and removing sidebar
