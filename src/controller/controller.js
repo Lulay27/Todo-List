@@ -1,5 +1,5 @@
 import { deleteTodo, todoArr } from '../model/editTodo.js';
-import { displayTodoArray } from '../view/displayTodo.js';
+import { displayTodoArray, popupTest } from '../view/displayTodo.js';
 import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, sideBar} from '../view/domConstants.js';
 import { createTodoTitle } from '../view/domHelperFunctions.js';
 import { displayInboxPage, displayTodayPage, displayWeekPage, sidebarLength } from '../view/uiDOM.js';
@@ -11,6 +11,11 @@ const EventListeners = () => {
 
     // submitting a todo
     submitBtn.addEventListener('click', (e) => {
+        // testing popup box display
+
+        // displaying pop up box 
+        // popupTest();
+
         createTodoTitle(todoInput.value);
         displayTodoArray();
     });
@@ -29,9 +34,7 @@ const EventListeners = () => {
         if (e.target.matches('.book')) {            // turn this into function displaySavedNote
             const index = e.target.closest('.object').id;
             e.target.parentElement.innerHTML = `
-            <textarea type="text" id="note-input" autofocus>
-            ${todoArr[index].note}
-            </textarea>
+            <textarea type="text" id="note-input" autofocus>${todoArr[index].note}</textarea>
             <button class="note-check"><i id="note-check-img" class="fa fa-check"></i></button>
         `;
         }
@@ -58,9 +61,13 @@ const EventListeners = () => {
             const noteValue = e.target.previousElementSibling.value;
             e.target.previousElementSibling.value = noteValue;
             todoArr[index].note = noteValue;
-            
             displayTodoArray();
         }
+        // displaying information about todo
+        // if (asd) {
+        //     const index = e.target.closest('.object').id;
+        //     popupTest(todoArr[index].title,todoArr[index].note,todoArr[index].due,todoArr[index].prio);
+        // }
     })
 
     // displaying and removing sidebar

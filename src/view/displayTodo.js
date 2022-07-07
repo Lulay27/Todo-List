@@ -1,10 +1,12 @@
-// import DOM constants?
+// might move this into controller
 
 import { isThisWeek, isToday, parseISO } from "date-fns";
 import { todoArr } from "../model/editTodo";
 // import {Todo} from "../model/Todo.js"
 import {todoContainer,todoInput,todayContainer,weekContainer} from '../view/domConstants.js';
 import {createElement} from '../view/domHelperFunctions.js';
+import exitImg from '../components/reject.png';
+import infoImg from '../components/info.png';
 
 //NOTE IF WEEK/INBOX/TODAY end up looking the same
 // combine displayInbox/today/weekTodo into displayPageTodo so only 1 function
@@ -18,8 +20,6 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
     todoElement.id = index; // might not need this
 
     // testing UI looks adding date to todo title container
-
-
     todoElement.innerHTML = `
     <div class='todo-data'>
         <div class="todo-data-left">
@@ -38,6 +38,7 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
             <button class="cal"><i id ="cal-img" class="fa fa-calendar-days"></i></button>
             <button class="book"><i id ="book-img" class="fa fa-book-open"></i></button>
             <button class="starz"><i id ="starz-img" class="fa fa-star"></i></button>
+            <img class="info-btn" src="${infoImg}">
         </div>
     </div>
     `;
@@ -119,9 +120,25 @@ function displayTodoArray() {
     }
 }
 
+//tester function for popup
+function popupTest(todoTitle,todoNote,todoDate,todoPrio) {
+    const tester = document.querySelector('.popup-background');
+    tester.style.display = 'flex';
+    const popup = document.querySelector('.popup-background');
+    popup.innerHTML = `
+    <div class="popup-container">
+        <div class="popup-title test">${todoDate}</div>
+        <div class="popup-due test">Due: ${todoTitle} </div>
+        <div class="popup-notes test">Notes: ${todoNote} </div>
+        <img class="popup-exit " src="${exitImg}">
+    </div>
+    `;
+}
+
 export {
     displayInboxTodo,
     displayTodayTodo,
     displayWeekTodo,
     displayTodoArray,
+    popupTest
 };

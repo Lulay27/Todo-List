@@ -125,7 +125,7 @@ object {
     
 }
 
-.todo-data .xmark, .cal, .book, .starz, .date-check, .note-check {
+.todo-data .xmark, .cal, .book, .starz, .date-check, .note-check, .info-btn {
     width: 35px;
     height: 35px;
     /* font-size: 25px; */
@@ -181,6 +181,62 @@ object {
 input[type=text] {
    
 }
+
+/* popup page */
+.popup-background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container {
+    height: 200px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+    display: grid;
+    grid-template-rows: 1fr 0.1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 0px;
+}
+
+.test {
+    /* border: red solid 0.5px; */
+}
+
+.popup-title {
+    font-size: 35px;
+    grid-row: 1;
+    grid-column: span 2;
+    
+}
+.popup-due {
+    grid-column: 1;
+}
+.popup-notes {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    
+}
+.popup-exit {
+    height: 40px;
+    width: 40px;
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: end;
+
+    cursor: pointer;
+}
+
+
+
 
 /* today page */
 

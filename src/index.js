@@ -33,6 +33,12 @@ EventListeners();
 // also note pad has some empty spaces inside that is annoying prob
 // from note default parameters
 
+// priority idea have 3 levels low med high switch by clicking on star
+// for UI colors green yellow red for levels which will be highlighted
+// everytime user presses star inc from g -> y -> r cycling
+
+// find new method to display hidden html
+
 // *** be careful of importing 'chains'
 
 /*
