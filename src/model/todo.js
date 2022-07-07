@@ -1,3 +1,4 @@
+import endOfDay from "date-fns/endOfDay";
 export class Todo {
     constructor(title = ' ',note = ' ',due = ' ',prio = ' ',id = ' ') {
         this.title = title;

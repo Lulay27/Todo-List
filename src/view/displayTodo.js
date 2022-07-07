@@ -7,6 +7,10 @@ import {todoContainer,todoInput,todayContainer,weekContainer} from '../view/domC
 import {createElement} from '../view/domHelperFunctions.js';
 import exitImg from '../components/reject.png';
 import infoImg from '../components/info.png';
+import calImg from '../components/calendar.png';
+import bookImg from '../components/edit.png';
+import starzImg from '../components/star.png';
+
 
 //NOTE IF WEEK/INBOX/TODAY end up looking the same
 // combine displayInbox/today/weekTodo into displayPageTodo so only 1 function
@@ -34,10 +38,10 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
             </div>
         </div>
         <div class="todo-data-right">
-            <button class="xmark"><i id ="xmark-img" class="fa fa-xmark"></i></button>
-            <button class="cal"><i id ="cal-img" class="fa fa-calendar-days"></i></button>
-            <button class="book"><i id ="book-img" class="fa fa-book-open"></i></button>
-            <button class="starz"><i id ="starz-img" class="fa fa-star"></i></button>
+            <img class="xmark" src="${exitImg}">
+            <img class="cal" src="${calImg}">
+            <img class="book" src="${bookImg}">
+            <img class="starz" src="${starzImg}">
             <img class="info-btn" src="${infoImg}">
         </div>
     </div>

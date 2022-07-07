@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 // import { dom } from '@fortawesome/fontawesome-svg-core';
+// remove all this TRASH FORTAWESOME ICONS SO BAD !!!
 
 //old files
 
@@ -20,14 +21,19 @@ import '@fortawesome/fontawesome-free/js/brands'
 // new files
 import {EventListeners} from './controller/controller.js';
 import {onLoad} from './oldfiles/onLoad.js';
-onLoad();
+onLoad();   // just add this to html all it is is loading html lol
 EventListeners();
 
+//TASK 1
 // fix up side bar use grid and completely redo it with img as btns
 // same with menu btn
 // after implement projects...make todo class have project?
 // or create project class
 // also change the FONT lol
+
+//TASK 2
+// make week/today look same and FUNCTION same as inbox minus adding todos
+// configure how date looks day/mm/year ? idk
 
 // added onLoad for now just to add today/week containers will change later
 // maybe add those into event Listeners?

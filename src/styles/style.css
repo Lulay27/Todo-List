@@ -6,29 +6,22 @@
     list-style: none;
 }
 
-button {
-    border: none;
-    cursor: pointer;
-}
-
 .header {
     display: flex;
-    /* padding: 10px; */
     height: auto;
     background-color: rgb(201, 170, 104);
 }
 
-#menu-icon {
+.plus-btn {
     width: 30px;
     height: 30px;
-    padding: 1px;
 }
 
 .menu-btn {
-    background-color: rgb(201, 170, 104);
     cursor: pointer;
-    border: none;
-    margin: 10px 0px 0px 10px
+    margin: 10px 0px 0px 10px;
+    width: 30px;
+    height: 30px;
 }
 
 .title-container {
@@ -49,19 +42,28 @@ button {
     background-color:#e4e2e2;
     overflow-x: hidden;
     transition: 0.5s;
+    display: grid;
+    grid-template-columns: 80px 110px;
+    grid-template-rows: 90px 90px 90px 90px;
+    column-gap: 10px;
 }
 
-.side-bar button {
-    padding: 1rem;
+.side-bar img {
+    height: 40px;
+    width: 40px;
+    align-self: center;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.side-bar div {
     font-size: 25px;
-    display: flex;
-    transition: 0.6s;
-    color: black;
-    background-color: #e4e2e2;
-    gap: 10px;
+    align-self: center;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.side-bar button:hover {
+.side-bar div:hover {
     color: rgb(136, 150, 189);
 }
 
@@ -106,10 +108,6 @@ button {
     width: auto;
 }
 
-object {
-   
-}
-
 .todo-data:hover {
     background-color: rgb(230, 216, 187);
     transition: 0.5s;
@@ -121,19 +119,13 @@ object {
     margin: 10px 0px 10px 0px;
 }
 
-#xmark-img, #cal-img, #book-img, #starz-img {
-    
-}
-
 .todo-data .xmark, .cal, .book, .starz, .date-check, .note-check, .info-btn {
     width: 35px;
     height: 35px;
-    /* font-size: 25px; */
     margin: 0px 5px 0px 5px;
-    /* padding: 1px; */
 }
 
-.todo-data .xmark, .cal, .book, .starz, .info-btn:hover {
+.todo-data .xmark, .cal, .book, .starz, .plus-btn, .date-check, .note-check, .info-btn:hover {
     cursor: pointer;
 }
 
@@ -142,7 +134,12 @@ object {
     align-items: center;
     font-size: 25px;
     gap: 50px;
-    /* padding: 2px; */
+}
+
+.date-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
 }
 
 #title-value {
@@ -163,23 +160,15 @@ object {
     align-items: center;
 }
 
-.todo-data .object {
-    
-}
-
 .form-container {
-    display: flex;
-    align-items: center;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 150px 40px;
 }
 
-#plus-icon {
-    height: 25px;
-    width: 25px;
-    margin: 4px;
-}
-
-input[type=text] {
-   
+.plus-btn {
+    align-self: center;
+    justify-self: end;
 }
 
 /* popup page */
@@ -231,12 +220,8 @@ input[type=text] {
     grid-row: 1;
     grid-column: 3;
     justify-self: end;
-
     cursor: pointer;
 }
-
-
-
 
 /* today page */
 
