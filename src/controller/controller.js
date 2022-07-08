@@ -16,8 +16,15 @@ const EventListeners = () => {
     });
 
     // editing a single todo
-    todoBtns.addEventListener('click', (e) => {     
+    todoBtns.addEventListener('click', (e) => {
 
+        // strike through text after marking checkbox
+        if (e.target.type == 'checkbox') {
+            if (e.target.checked == true) {
+                e.target.closest('.object').classList.add('checked');
+            } else
+            e.target.closest('.object').classList.remove('checked');
+        }
         if (e.target.matches('.cal')) {             // turn this into function displaySavedDate
             const index = e.target.closest('.object').id;
             e.target.parentElement.innerHTML = `
@@ -30,7 +37,7 @@ const EventListeners = () => {
         if (e.target.matches('.book')) {            // turn this into function displaySavedNote
             const index = e.target.closest('.object').id;
             e.target.parentElement.innerHTML = `
-            <textarea type="text" id="note-input" autofocus>${todoArr[index].note}</textarea>
+            <textarea type="text" id="note-input">${todoArr[index].note}</textarea>
             <img class="note-check" src="${checkImg}">
             `;
         }
@@ -38,7 +45,7 @@ const EventListeners = () => {
             // something later maybe 3 levels of prio
         }
         // deleting todo
-        if (e.target.type == 'checkbox' || e.target.matches('.xmark')) {
+        if (e.target.matches('.xmark')) {
             const index = e.target.closest('.object').id;   // make this a function?
             deleteTodo(index);
             displayTodoArray();
