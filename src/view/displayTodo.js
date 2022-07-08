@@ -56,6 +56,7 @@ function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
     todoElement.innerHTML = `
     <div class='todo-data'>
         <div class="todo-data-left">
+            <input type="checkbox" class="checkBox">
             <div id=title-value>
                 ${todoTitle}
             </div>
@@ -66,12 +67,14 @@ function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
             </div>
         </div>
         <div class="todo-data-right">
-            <div id=note-value>
-                ${todoNote}
-            </div>
+            <img class="xmark" src="${exitImg}">
+            <img class="cal" src="${calImg}">
+            <img class="book" src="${bookImg}">
+            <img class="starz" src="${starzImg}">
+            <img class="info-btn" src="${infoImg}">
         </div>
     </div>
-`;
+    `;
     today.appendChild(todoElement);
 }
 
@@ -82,6 +85,7 @@ function displayWeekTodo(todoTitle,todoNote,todoDate,todoPrio) {
     todoElement.innerHTML = `
     <div class='todo-data'>
         <div class="todo-data-left">
+            <input type="checkbox" class="checkBox">
             <div id=title-value>
                 ${todoTitle}
             </div>
@@ -92,12 +96,14 @@ function displayWeekTodo(todoTitle,todoNote,todoDate,todoPrio) {
             </div>
         </div>
         <div class="todo-data-right">
-            <div id=note-value>
-                ${todoNote}
-            </div>
+            <img class="xmark" src="${exitImg}">
+            <img class="cal" src="${calImg}">
+            <img class="book" src="${bookImg}">
+            <img class="starz" src="${starzImg}">
+            <img class="info-btn" src="${infoImg}">
         </div>
     </div>
-`;
+    `;
     week.appendChild(todoElement);
 }
 

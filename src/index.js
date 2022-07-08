@@ -7,9 +7,24 @@ import {onLoad} from './oldfiles/onLoad.js';
 onLoad();   // just add this to html all it is is loading html lol
 EventListeners();
 
+// huge change that could save me code ********
+// since I have today/week same as inbox (ui look)
+// make it so onclick of today/week only changes title and 
+// which todos are displayed.
+// thus having all these obj in the same container (task-container)
+// and removing todo-container and today-container
+
+
+// since making inbox same as today/week diff is only shows
+// today/week todos. Can maybe simplify displayTodo.js code into
+// single displayTodo function
+// problem is having multiple same IDS for obj name index
+
 //TASK 2
 // make week/today look same and FUNCTION same as inbox minus adding todos
 // configure how date looks day/mm/year ? idk
+
+// text cap in notes and maybe title?
 
 // added onLoad for now just to add today/week containers will change later
 // maybe add those into event Listeners?
