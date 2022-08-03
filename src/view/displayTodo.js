@@ -56,9 +56,10 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
 }
 
 //displays a single todo in today add to innerHTML
-function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
+function displayTodayTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
     const today = document.querySelector('.today-container');
-    const todoElement = createElement("div",".today-todo-container");
+    const todoElement = createElement("div","object");
+    todoElement.id = index;
     let prioImg;
     if (todoPrio == 0) {
         prioImg = starzImg;

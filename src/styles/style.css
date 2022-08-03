@@ -94,7 +94,7 @@
     font-size: 35px;
 }
 
-.task-container {
+.task-container, .week-container, .today-container {
     display: flex;
     flex-direction: column;
     height: auto;
