@@ -4,8 +4,18 @@ import './styles/style.css';
 // new files
 import {EventListeners} from './controller/controller.js';
 import {onLoad} from './oldfiles/onLoad.js';
+import { displayTodoArray } from './view/displayTodo.js';
+
+// retrieveLocalStorage();
 onLoad();   // just add this to html all it is is loading html lol
-EventListeners();
+EventListeners(); // this is technically the onLoad()
+displayTodoArray();
+
+// change some functions to take in a Todo object as parameter
+// instead of just using the ID tag
+// my code is mostly DOM events to process objects need more oop
+// ex. after getting ID of todo create a pointer todo that is referenced
+// 
 
 // huge change that could save me code ********
 // since I have today/week same as inbox (ui look)

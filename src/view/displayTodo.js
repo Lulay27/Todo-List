@@ -1,8 +1,6 @@
 // might move this into controller
-
 import { isThisWeek, isToday, parseISO } from "date-fns";
 import { todoArr } from "../model/editTodo";
-// import {Todo} from "../model/Todo.js"
 import {todoContainer,todoInput,todayContainer,weekContainer} from '../view/domConstants.js';
 import {createElement} from '../view/domHelperFunctions.js';
 import exitImg from '../components/reject.png';
@@ -10,6 +8,7 @@ import infoImg from '../components/info.png';
 import calImg from '../components/calendar.png';
 import bookImg from '../components/edit.png';
 import starzImg from '../components/star.png';
+import { saveToLocalStorage } from "../model/storage";
 
 
 //NOTE IF WEEK/INBOX/TODAY end up looking the same
@@ -109,6 +108,7 @@ function displayWeekTodo(todoTitle,todoNote,todoDate,todoPrio) {
 
 // resets all innerHTML's for inbox/today/week and displays new todoArr contents
 function displayTodoArray() {
+    saveToLocalStorage();
     todoInput.value ="";
     todoContainer.innerHTML="";
     const week = document.querySelector('.week-container');

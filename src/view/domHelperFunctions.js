@@ -1,5 +1,4 @@
 import { addTodo } from '../model/editTodo.js';
-// import * as Todo from "../model/Todo.js";
 import {Todo} from "../model/Todo.js";
 
 // move this into displayTodo.js
@@ -27,4 +26,6 @@ export function getElement(selector) {
     return element = document.querySelector(selector);
     // return element;
 }
+
+
 

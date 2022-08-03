@@ -1,4 +1,3 @@
-// import { weekContainer, todayContainer } from "../view/domConstants";
 
 
 // for these maybe add them to template.html? so I dont have to

@@ -4,8 +4,6 @@ import {submitBtn,todoInput,todoBtns, calendarHTML, bookHTML, sideBar, popupBack
 import { createTodoTitle } from '../view/domHelperFunctions.js';
 import { displayInboxPage, displayTodayPage, displayWeekPage, sidebarLength } from '../view/uiDOM.js';
 import checkImg from '../components/check.png';
-//test
-// const tester = document.querySelector('.menu-btn');
 
 const EventListeners = () => {
 

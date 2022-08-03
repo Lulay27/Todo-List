@@ -1,5 +1,6 @@
 // might have this const elsewhere
-const todoArr = []
+
+const todoArr = JSON.parse(localStorage.getItem('todoArray'));
 
 // add todo to array
 function addTodo(todo) {
