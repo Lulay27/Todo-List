@@ -9,7 +9,6 @@ export function retrieveLocalStorage() {
         if (todoArr[0] != null) {
             todoArr = JSON.parse(localStorage.getItem('todoArray'));
         }
-        
     }
 }
 

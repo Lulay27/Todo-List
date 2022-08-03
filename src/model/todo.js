@@ -1,6 +1,6 @@
 import endOfDay from "date-fns/endOfDay";
 export class Todo {
-    constructor(title = ' ',note = ' ',due = ' ',prio = ' ',id = ' ') {
+    constructor(title = ' ',note = ' ',due = ' ',prio = 0 ,id = ' ') {
         this.title = title;
         this.note = note;
         this.due = due;
@@ -56,5 +56,4 @@ export class Todo {
     //         this._id = newId;
     //     }
     // }
-    // add get/set for title later when adding function for that in view
 }

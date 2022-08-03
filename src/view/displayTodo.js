@@ -8,6 +8,7 @@ import infoImg from '../components/info.png';
 import calImg from '../components/calendar.png';
 import bookImg from '../components/edit.png';
 import starzImg from '../components/star.png';
+import goldStarImg from '../components/goldstar.png';
 import { saveToLocalStorage } from "../model/storage";
 
 
@@ -21,6 +22,12 @@ import { saveToLocalStorage } from "../model/storage";
 function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
     const todoElement = createElement("div","object");
     todoElement.id = index; // might not need this
+    let prioImg;
+    if (todoPrio == 0) {
+        prioImg = starzImg;
+    } else if (todoPrio == 1) {
+        prioImg = goldStarImg;
+    }
 
     // testing UI looks adding date to todo title container
     todoElement.innerHTML = `
@@ -40,7 +47,7 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
             <img class="xmark" src="${exitImg}">
             <img class="cal" src="${calImg}">
             <img class="book" src="${bookImg}">
-            <img class="starz" src="${starzImg}">
+            <img class="starz" src="${prioImg}">
             <img class="info-btn" src="${infoImg}">
         </div>
     </div>
@@ -51,7 +58,13 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
 //displays a single todo in today add to innerHTML
 function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
     const today = document.querySelector('.today-container');
-    const todoElement = createElement("div",".today-todo-container")
+    const todoElement = createElement("div",".today-todo-container");
+    let prioImg;
+    if (todoPrio == 0) {
+        prioImg = starzImg;
+    } else if (todoPrio == 1) {
+        prioImg = goldStarImg;
+    }
     todoElement.innerHTML = `
     <div class='todo-data'>
         <div class="todo-data-left">
@@ -69,7 +82,7 @@ function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
             <img class="xmark" src="${exitImg}">
             <img class="cal" src="${calImg}">
             <img class="book" src="${bookImg}">
-            <img class="starz" src="${starzImg}">
+            <img class="starz" src="${prioImg}">
             <img class="info-btn" src="${infoImg}">
         </div>
     </div>
@@ -78,9 +91,17 @@ function displayTodayTodo(todoTitle,todoNote,todoDate,todoPrio) {
 }
 
 // display single todo in week tab
-function displayWeekTodo(todoTitle,todoNote,todoDate,todoPrio) {
+function displayWeekTodo(index,todoTitle,todoNote,todoDate,todoPrio) {
     const week = document.querySelector('.week-container');
-    const todoElement = createElement("div",".week-obj")
+    const todoElement = createElement("div","object");
+    todoElement.id = index;
+    let prioImg;
+    if (todoPrio == 0) {
+        prioImg = starzImg;
+    } else if (todoPrio == 1) {
+        prioImg = goldStarImg;
+    }
+
     todoElement.innerHTML = `
     <div class='todo-data'>
         <div class="todo-data-left">
@@ -98,7 +119,7 @@ function displayWeekTodo(todoTitle,todoNote,todoDate,todoPrio) {
             <img class="xmark" src="${exitImg}">
             <img class="cal" src="${calImg}">
             <img class="book" src="${bookImg}">
-            <img class="starz" src="${starzImg}">
+            <img class="starz" src="${prioImg}">
             <img class="info-btn" src="${infoImg}">
         </div>
     </div>
@@ -121,16 +142,15 @@ function displayTodoArray() {
         displayInboxTodo(i,todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
 
         if (isThisWeek(todoDate) == true) {
-            displayWeekTodo(todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
+            displayWeekTodo(i,todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
         }
 
         if (isToday(todoDate) == true) {
-            displayTodayTodo(todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
+            displayTodayTodo(i,todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio);
         }
     }
 }
 
-//tester function for popup
 function popupTest(todoTitle,todoNote,todoDate,todoPrio) {
     const tester = document.querySelector('.popup-background');
     tester.style.display = 'flex';

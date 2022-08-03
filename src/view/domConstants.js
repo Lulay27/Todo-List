@@ -33,7 +33,7 @@ export const todoContainer = document.querySelector('.todo-container');     // p
 export const weekContainer = document.querySelector('.week-container');     // problem same. Detail in index.js
 export const todayContainer = document.querySelector('.today-container');
 export const todoInput = document.querySelector('#todo-input');
-export const todoBtns = document.querySelector('.todo-container');
+export const todoBtns = document.querySelector('.main-container');
 export const popupBackGround = document.querySelector('.popup-background');
 export const popupContainer = document.querySelector('.popup-container');
 // const array for obj??

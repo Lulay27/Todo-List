@@ -40,11 +40,18 @@ const EventListeners = () => {
             `;
         }
         if (e.target.matches('.starz')) {
-            // something later maybe 3 levels of prio
+            const index = e.target.closest('.object').id;
+            if (todoArr[index].prio == 0) {
+                todoArr[index].prio++;
+            } else {
+                todoArr[index].prio = 0;
+            }
+            displayTodoArray();
         }
         // deleting todo
         if (e.target.matches('.xmark')) {
             const index = e.target.closest('.object').id;   // make this a function?
+            console.log('poop');
             deleteTodo(index);
             displayTodoArray();
         }
