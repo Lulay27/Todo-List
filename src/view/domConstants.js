@@ -20,9 +20,6 @@ export const bookHTML = `
 </div>
 `;
 
-// must exist intially so week/today must be created inside controller functions
-// might turn this into object so its private since some names are repeated ex. main
-
 export const menuBtn = document.querySelector('.menu-btn');
 export const main = document.querySelector('.main');
 const mainContainer = document.querySelector('.main-container');
@@ -36,7 +33,3 @@ export const todoInput = document.querySelector('#todo-input');
 export const todoBtns = document.querySelector('.main-container');
 export const popupBackGround = document.querySelector('.popup-background');
 export const popupContainer = document.querySelector('.popup-container');
-// const array for obj??
-
-
-// when u get back figure out how to export all these constants cleaner into other files

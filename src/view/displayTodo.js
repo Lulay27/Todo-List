@@ -11,15 +11,6 @@ import starzImg from '../components/star.png';
 import goldStarImg from '../components/goldstar.png';
 import { saveToLocalStorage } from "../model/storage";
 
-
-
-//NOTE IF WEEK/INBOX/TODAY end up looking the same
-// combine displayInbox/today/weekTodo into displayPageTodo so only 1 function
-
-
-// displays (single) the object and assigns it an index id
-// going to move forloop outside this function so this
-// becomes a true view module
 function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) {
     const todoElement = createElement("div","object");
     todoElement.id = index; // might not need this
@@ -29,20 +20,17 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) 
     } else if (todoPrio == 1) {
         prioImg = goldStarImg;
     }
-
-    // for checked add to object
     let checkbox;
     if (todoCheck == 0) {
-        checkbox = 'nothing';
+        checkbox = '';
     } else if (todoCheck == 1) {
-        checkbox = 'checked';
+        checkbox = ' checked';
     }
 
-    // testing UI looks adding date to todo title container
     todoElement.innerHTML = `
-    <div class='todo-data ${checkbox}'>
+    <div class='todo-data${checkbox}'>
         <div class="todo-data-left">
-            <input type="checkbox" class="checkBox" ${checkbox}>
+            <input type="checkbox" class="checkBox"${checkbox}>
             <div id=title-value>
                 ${todoTitle}
             </div>
@@ -67,7 +55,7 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) 
 //displays a single todo in today add to innerHTML
 function displayTodayTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) {
     const today = document.querySelector('.today-container');
-    const todoElement = createElement("div","object checked");
+    const todoElement = createElement("div","object");
     todoElement.id = index;
     let prioImg;
     if (todoPrio == 0) {
@@ -78,15 +66,15 @@ function displayTodayTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) 
 
     let checkbox;
     if (todoCheck == 0) {
-        checkbox = 'nothing';
+        checkbox = '';
     } else if (todoCheck == 1) {
-        checkbox = 'checked';
+        checkbox = ' checked';
     }
 
     todoElement.innerHTML = `
-    <div class='todo-data ${checkbox}'>
+    <div class='todo-data${checkbox}'>
         <div class="todo-data-left">
-            <input type="checkbox" class="checkBox" ${checkbox}>
+            <input type="checkbox" class="checkBox"${checkbox}>
             <div id=title-value>
                 ${todoTitle}
             </div>
@@ -122,15 +110,15 @@ function displayWeekTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) {
 
     let checkbox;
     if (todoCheck == 0) {
-        checkbox = 'nothing';
+        checkbox = '';
     } else if (todoCheck == 1) {
-        checkbox = 'checked';
+        checkbox = ' checked';
     }
 
     todoElement.innerHTML = `
-    <div class='todo-data ${checkbox}'>
+    <div class='todo-data${checkbox}'>
         <div class="todo-data-left">
-            <input type="checkbox" class="checkBox" ${checkbox}>
+            <input type="checkbox" class="checkBox"${checkbox}>
             <div id=title-value>
                 ${todoTitle}
             </div>
@@ -155,18 +143,6 @@ function displayWeekTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) {
 // resets all innerHTML's for inbox/today/week and displays new todoArr contents
 function displayTodoArray() {
     
-    // delete todos that are marked
-    //qselect all and remove todos with object.checked
-    const checkedArr = document.querySelectorAll('.object');
-    checkedArr.forEach((item,index,arr) =>{
-
-        if (item.className == 'checked') {
-            console.log('par5');
-        }
-
-        // console.log(item.classList + '' + index);
-    })
-
     todoInput.value ="";
     todoContainer.innerHTML="";
     const week = document.querySelector('.week-container');
@@ -186,7 +162,6 @@ function displayTodoArray() {
             displayTodayTodo(i,todoArr[i].title,todoArr[i].note,todoArr[i].due,todoArr[i].prio,todoArr[i].check);
         }
     }
-
     saveToLocalStorage();
 }
 

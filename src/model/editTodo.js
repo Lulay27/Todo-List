@@ -1,4 +1,3 @@
-// might have this const elsewhere
 
 const todoArr = JSON.parse(localStorage.getItem('todoArray'));
 
@@ -11,7 +10,5 @@ function addTodo(todo) {
 function deleteTodo(index) {
     todoArr.splice(index,1);
 }
-
-// function 
 
 export {todoArr,addTodo,deleteTodo}

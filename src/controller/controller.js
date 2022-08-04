@@ -19,6 +19,7 @@ const EventListeners = () => {
         // strike through text after marking checkbox
         if (e.target.type == 'checkbox') {
 
+
             const index = e.target.closest('.object').id;
             if (todoArr[index].check == 0) {
                 todoArr[index].check++;
