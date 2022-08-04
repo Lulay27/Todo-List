@@ -27,6 +27,11 @@ const EventListeners = () => {
                 todoArr[index].check = 0;
             }
             displayTodoArray();
+
+            // if (e.target.checked == true) {
+            //     e.target.closest('.object').classList.add('checked');
+            // } else
+            // e.target.closest('.object').classList.remove('checked');
         }
         if (e.target.matches('.cal')) {             // turn this into function displaySavedDate
             const index = e.target.closest('.object').id;

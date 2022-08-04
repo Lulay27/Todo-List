@@ -1,6 +1,6 @@
-import endOfDay from "date-fns/endOfDay";
+// import endOfDay from "date-fns/endOfDay";
 export class Todo {
-    constructor(title = ' ',note = ' ',due = ' ',prio = 0 ,id = ' ', check = 0) {
+    constructor(title = '',note = '',due = '',prio = 0 ,id = '', check = 0) {
         this.title = title;
         this.note = note;
         this.due = due;

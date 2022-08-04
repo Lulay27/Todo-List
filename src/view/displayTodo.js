@@ -27,6 +27,13 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) 
         checkbox = ' checked';
     }
 
+    let date;
+    if (todoDate == '') {
+        date = '';
+    } else {
+        date = todoDate;
+    }
+
     todoElement.innerHTML = `
     <div class='todo-data${checkbox}'>
         <div class="todo-data-left">
@@ -37,7 +44,7 @@ function displayInboxTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) 
         </div>
         <div class="todo-data-mid">
             <div id=date-value>
-                ${todoDate}
+                ${date}
             </div>
         </div>
         <div class="todo-data-right">
@@ -71,6 +78,13 @@ function displayTodayTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) 
         checkbox = ' checked';
     }
 
+    let date;
+    if (todoDate == '') {
+        date = '';
+    } else {
+        date = todoDate;
+    }
+
     todoElement.innerHTML = `
     <div class='todo-data${checkbox}'>
         <div class="todo-data-left">
@@ -81,7 +95,7 @@ function displayTodayTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) 
         </div>
         <div class="todo-data-mid">
             <div id=date-value>
-                ${todoDate}
+                ${date}
             </div>
         </div>
         <div class="todo-data-right">
@@ -115,6 +129,13 @@ function displayWeekTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) {
         checkbox = ' checked';
     }
 
+    let date;
+    if (todoDate == '') {
+        date = '';
+    } else {
+        date = todoDate;
+    }
+
     todoElement.innerHTML = `
     <div class='todo-data${checkbox}'>
         <div class="todo-data-left">
@@ -125,7 +146,7 @@ function displayWeekTodo(index,todoTitle,todoNote,todoDate,todoPrio,todoCheck) {
         </div>
         <div class="todo-data-mid">
             <div id=date-value>
-                ${todoDate}
+                ${date}
             </div>
         </div>
         <div class="todo-data-right">
