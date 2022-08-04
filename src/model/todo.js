@@ -1,11 +1,12 @@
 import endOfDay from "date-fns/endOfDay";
 export class Todo {
-    constructor(title = ' ',note = ' ',due = ' ',prio = 0 ,id = ' ') {
+    constructor(title = ' ',note = ' ',due = ' ',prio = 0 ,id = ' ', check = 0) {
         this.title = title;
         this.note = note;
         this.due = due;
         this.prio = prio;
         this.id = id;
+        this.check = check;
     }
     // get title() {
     //     return this._title;

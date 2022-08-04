@@ -18,10 +18,14 @@ const EventListeners = () => {
 
         // strike through text after marking checkbox
         if (e.target.type == 'checkbox') {
-            if (e.target.checked == true) {
-                e.target.closest('.object').classList.add('checked');
-            } else
-            e.target.closest('.object').classList.remove('checked');
+
+            const index = e.target.closest('.object').id;
+            if (todoArr[index].check == 0) {
+                todoArr[index].check++;
+            } else {
+                todoArr[index].check = 0;
+            }
+            displayTodoArray();
         }
         if (e.target.matches('.cal')) {             // turn this into function displaySavedDate
             const index = e.target.closest('.object').id;
@@ -51,7 +55,6 @@ const EventListeners = () => {
         // deleting todo
         if (e.target.matches('.xmark')) {
             const index = e.target.closest('.object').id;   // make this a function?
-            console.log('poop');
             deleteTodo(index);
             displayTodoArray();
         }
